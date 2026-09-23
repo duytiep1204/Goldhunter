@@ -1,0 +1,533 @@
+/* Cài đặt chung */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Cuộn trang mượt khi bấm menu */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+    top: 0 !important; /* Khắc phục Google Translate đẩy body xuống */
+}
+
+/* Ẩn banner Google Translate */
+.goog-te-banner-frame {
+    display: none !important;
+}
+.skiptranslate {
+    display: none !important;
+}
+#goog-gt-tt {
+    display: none !important;
+}
+
+/* Thanh thông báo */
+.top-banner {
+    background-color: #1a1a1a;
+    color: #ffd700;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #333;
+}
+.close-banner {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(10, 10, 10, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 20px;
+}
+.logo-icon {
+    background-color: #ffd700;
+    color: #000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+nav a:hover {
+    color: #ffd700;
+}
+
+/* =========================================
+   GOOGLE TRANSLATE STYLING
+   ========================================= */
+#google_translate_element {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 8px 14px;
+    color: #fff;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+#google_translate_element:hover {
+    border-color: #ffd700;
+}
+#google_translate_element .goog-te-gadget {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0 !important;
+    color: transparent !important;
+    line-height: 1 !important;
+}
+#google_translate_element .goog-te-gadget-simple {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+#google_translate_element .goog-te-gadget-simple .goog-te-menu-value {
+    color: #fff !important;
+    font-size: 14px !important;
+    font-weight: 600;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px;
+}
+#google_translate_element .goog-te-gadget-simple .goog-te-menu-value span {
+    color: #fff !important;
+    font-size: 14px !important;
+    border: none !important;
+}
+#google_translate_element .goog-te-gadget-simple .goog-te-menu-value img {
+    display: none !important;
+}
+#google_translate_element .goog-te-gadget-icon {
+    display: none !important;
+}
+/* Ẩn dòng chữ "Select Language" mặc định của Google */
+#google_translate_element .goog-te-gadget-simple .goog-te-menu-value span:first-child {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    padding: 80px 50px;
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.hero-content {
+    flex: 1;
+}
+.badge {
+    display: inline-block;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+.hero h1 {
+    font-size: 72px;
+    font-weight: 800;
+    color: #ffd700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+.hero h2 {
+    font-size: 24px;
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+.hero p {
+    color: #aaa;
+    font-size: 16px;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+.btn-primary {
+    background-color: #ffd700;
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+.btn-primary:hover {
+    background-color: #e6c200;
+    transform: translateY(-2px);
+}
+.btn-secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+.btn-secondary:hover {
+    border-color: #ffd700;
+    color: #ffd700;
+}
+.hero-chart img {
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+.chart-note {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Features Section */
+.features {
+    padding: 80px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.section-label {
+    color: #ffd700;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+.features h2, .how-it-works h2, .pricing h2, .faq h2, .download h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.feature-item {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #222;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+.feature-item::before {
+    content: "✓";
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* How it works */
+.how-it-works {
+    padding: 80px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.step-card {
+    background: #111;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #222;
+}
+.step-number {
+    background: #ffd700;
+    color: #000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.step-card h3 {
+    margin-bottom: 10px;
+}
+.step-card p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* Pricing */
+.pricing {
+    padding: 80px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+    text-align: left;
+}
+.price-card {
+    background: #111;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+}
+.price-card.popular {
+    border-color: #ffd700;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
+}
+.plan-type {
+    font-size: 12px;
+    font-weight: 600;
+    color: #888;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.price-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.price {
+    font-size: 48px;
+    font-weight: 800;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+.price span {
+    font-size: 16px;
+    color: #888;
+}
+.price-card p {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.price-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+.price-card ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+.full-width {
+    width: 100%;
+}
+
+/* Download Section */
+.download {
+    padding: 80px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.download-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+.download-card {
+    background: #111;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #222;
+    text-align: center;
+}
+.download-icon {
+    background: #1a1a1a;
+    color: #ffd700;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin: 0 auto 20px auto;
+    border: 1px solid #333;
+}
+.download-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.file-name {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.req {
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+/* FAQ */
+.faq {
+    padding: 80px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+.faq-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+.faq-tabs button {
+    background: #111;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.faq-tabs button.active {
+    background: #ffd700;
+    color: #000;
+    border-color: #ffd700;
+}
+.faq-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    text-align: left;
+}
+.faq-item {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.faq-item span {
+    color: #ffd700;
+    font-size: 20px;
+}
+
+/* Footer */
+footer {
+    padding: 40px 50px;
+    text-align: center;
+    color: #555;
+    font-size: 12px;
+    border-top: 1px solid #222;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Chat Widget */
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    border: 2px solid #ffd700;
+    z-index: 9999;
+}
+.chat-widget img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+    nav a {
+        margin: 0 8px;
+        font-size: 13px;
+    }
+    #google_translate_element {
+        align-self: flex-end;
+    }
+    .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+    .hero h1 {
+        font-size: 48px;
+    }
+    .features, .how-it-works, .pricing, .download, .faq {
+        padding: 50px 20px;
+    }
+    .feature-grid, .steps-grid, .pricing-grid, .download-grid, .faq-list {
+        grid-template-columns: 1fr;
+    }
+}
