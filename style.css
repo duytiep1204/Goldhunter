@@ -1,4 +1,6 @@
-/* Cài đặt chung */
+/* =========================================
+   CÀI ĐẶT CHUNG
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -19,19 +21,19 @@ body {
     position: static !important;
 }
 
-/* Ẩn iframe banner của Google Translate (nhưng KHÔNG ẩn dropdown) */
+/* Ẩn banner Google Translate */
 .goog-te-banner-frame,
 iframe.goog-te-banner-frame {
     display: none !important;
     visibility: hidden !important;
 }
-
-/* Ẩn tooltip */
 #goog-gt-tt {
     display: none !important;
 }
 
-/* Thanh thông báo */
+/* =========================================
+   THANH THÔNG BÁO
+   ========================================= */
 .top-banner {
     background-color: #1a1a1a;
     color: #ffd700;
@@ -52,7 +54,9 @@ iframe.goog-te-banner-frame {
     font-size: 16px;
 }
 
-/* Header */
+/* =========================================
+   HEADER
+   ========================================= */
 header {
     display: flex;
     justify-content: space-between;
@@ -94,7 +98,7 @@ nav a:hover {
 }
 
 /* =========================================
-   LANGUAGE SELECTOR TÙY CHỈNH
+   DROPDOWN NGÔN NGỮ TÙY CHỈNH
    ========================================= */
 .lang-selector {
     position: relative;
@@ -197,10 +201,8 @@ nav a:hover {
 }
 
 /* =========================================
-   CÁC PHẦN CÒN LẠI CỦA TRANG
+   HERO SECTION
    ========================================= */
-
-/* Hero Section */
 .hero {
     display: flex;
     padding: 80px 50px;
@@ -287,7 +289,9 @@ nav a:hover {
     margin-top: 10px;
 }
 
-/* Features Section */
+/* =========================================
+   FEATURES SECTION
+   ========================================= */
 .features {
     padding: 80px 50px;
     max-width: 1200px;
@@ -326,7 +330,9 @@ nav a:hover {
     font-weight: bold;
 }
 
-/* How it works */
+/* =========================================
+   HOW IT WORKS
+   ========================================= */
 .how-it-works {
     padding: 80px 50px;
     max-width: 1200px;
@@ -363,7 +369,9 @@ nav a:hover {
     font-size: 14px;
 }
 
-/* Pricing */
+/* =========================================
+   PRICING
+   ========================================= */
 .pricing {
     padding: 80px 50px;
     max-width: 1200px;
@@ -429,7 +437,9 @@ nav a:hover {
     width: 100%;
 }
 
-/* Download Section */
+/* =========================================
+   DOWNLOAD
+   ========================================= */
 .download {
     padding: 80px 50px;
     max-width: 1200px;
@@ -479,7 +489,9 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-/* FAQ */
+/* =========================================
+   FAQ
+   ========================================= */
 .faq {
     padding: 80px 50px;
     max-width: 1200px;
@@ -527,7 +539,9 @@ nav a:hover {
     font-size: 20px;
 }
 
-/* Footer */
+/* =========================================
+   FOOTER
+   ========================================= */
 footer {
     padding: 40px 50px;
     text-align: center;
@@ -538,7 +552,9 @@ footer {
     margin: 0 auto;
 }
 
-/* Chat Widget */
+/* =========================================
+   CHAT WIDGET
+   ========================================= */
 .chat-widget {
     position: fixed;
     bottom: 20px;
@@ -558,7 +574,9 @@ footer {
     object-fit: cover;
 }
 
-/* Responsive */
+/* =========================================
+   RESPONSIVE
+   ========================================= */
 @media (max-width: 900px) {
     header {
         flex-direction: column;

@@ -29,11 +29,9 @@
             <a href="#cau-hoi">Câu hỏi</a>
         </nav>
 
-        <!-- =============================================
-             LANGUAGE SELECTOR (Tùy chỉnh - Hoạt động 100%)
-             ============================================= -->
+        <!-- DROPDOWN NGÔN NGỮ TÙY CHỈNH -->
         <div class="lang-selector" id="langSelector">
-            <button class="lang-btn" id="langBtn">
+            <button class="lang-btn" id="langBtn" type="button">
                 <span class="globe-icon">🌐</span>
                 <span id="currentLang">Tiếng Việt</span>
                 <span class="arrow">▼</span>
@@ -81,7 +79,7 @@
         </div>
     </section>
 
-    <!-- LỢI ÍCH NỔI BẬT (TÍNH NĂNG) -->
+    <!-- LỢI ÍCH NỔI BẬT -->
     <section class="features" id="tinh-nang">
         <p class="section-label">LỢI ÍCH NỔI BẬT</p>
         <h2>Vì sao trader chọn GoldHunter EA</h2>
@@ -97,7 +95,7 @@
         </div>
     </section>
 
-    <!-- CÁCH HOẠT ĐỘNG (6 BƯỚC) -->
+    <!-- CÁCH HOẠT ĐỘNG -->
     <section class="how-it-works" id="cach-hoat-dong">
         <p class="section-label">CÁCH GOLDHUNTER HOẠT ĐỘNG</p>
         <h2>Một chu kỳ lặp lại. Không dự đoán. Chỉ cấu trúc thuần.</h2>
@@ -231,10 +229,11 @@
         <img src="https://via.placeholder.com/50" alt="Support">
     </div>
 
-    <!-- =============================================
-         GOOGLE TRANSLATE (ẨN - CHỈ DÙNG ĐỂ DỊCH NGẦM)
-         ============================================= -->
-    <div id="google_translate_element" style="position:absolute; left:-9999px; top:-9999px;"></div>
+    <!-- 
+      GOOGLE TRANSLATE CHẠY NGẦM - CHỈ ĐỂ DỊCH TRANG
+      Container được ẩn hoàn toàn khỏi giao diện
+    -->
+    <div id="google_translate_element" style="display:none; visibility:hidden; height:0; width:0; overflow:hidden;"></div>
     <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
