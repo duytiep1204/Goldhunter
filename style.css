@@ -322,15 +322,18 @@ nav a:hover {
     border: 1px solid #333;
 }
 
-.chart-note {
-    font-size: 10px;
-    color: #666;
+.chart-note 
+{
+    font-size: 6px !important;
+    color: #666 !important;
     text-align: center;
     margin-top: 6px;
-    white-space: nowrap;      /* ← Không cho phép xuống dòng */
-    overflow: hidden;          /* ← Ẩn nếu tràn */
-    text-overflow: ellipsis;   /* ← Hiện dấu "..." nếu tràn */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     max-width: 100%;
+    display: block;     /* Đảm bảo không bị ảnh hưởng bởi flex */
+    line-height: 1.0;   /* Giảm chiều cao dòng */
 }
 
 /* =========================================
