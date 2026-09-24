@@ -74,36 +74,29 @@ const langNames = {
     'en-ZA': 'English (South Africa)'
 };
 
-// 4.4. Hàm đổi ngôn ngữ
+// 4.4. Hàm đổi ngôn ngữ - Dùng cookie googtrans
 function changeLanguage(langCode) {
     const hostname = window.location.hostname;
     
     if (langCode === 'vi') {
-        // Xóa cookie googtrans để về tiếng Việt
-        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + hostname;
-        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + hostname;
+        // Xóa tất cả cookie googtrans để về tiếng Việt
+        const expire = 'expires=Thu, 01 Jan 1970 00:00:00 UTC';
+        document.cookie = `googtrans=; ${expire}; path=/;`;
+        document.cookie = `googtrans=; ${expire}; path=/; domain=${hostname};`;
+        document.cookie = `googtrans=; ${expire}; path=/; domain=.${hostname};`;
         window.location.reload();
         return;
     }
     
-    // Ghi cookie googtrans
-    document.cookie = 'googtrans=/vi/' + langCode + '; path=/;';
+    // Ghi cookie googtrans với đầy đủ các domain để chắc chắn hoạt động
+    document.cookie = `googtrans=/vi/${langCode}; path=/;`;
     if (hostname && hostname !== 'localhost' && hostname !== '127.0.0.1') {
-        document.cookie = 'googtrans=/vi/' + langCode + '; path=/; domain=' + hostname;
+        document.cookie = `googtrans=/vi/${langCode}; path=/; domain=${hostname};`;
+        document.cookie = `googtrans=/vi/${langCode}; path=/; domain=.${hostname};`;
     }
     
-    // Thử dùng dropdown ẩn của Google Translate (nếu đã load)
-    const googleSelect = document.querySelector('.goog-te-combo');
-    if (googleSelect) {
-        googleSelect.value = langCode;
-        googleSelect.dispatchEvent(new Event('change'));
-        // Reload để chắc chắn áp dụng
-        setTimeout(() => window.location.reload(), 300);
-    } else {
-        // Reload để áp dụng cookie
-        window.location.reload();
-    }
+    // Reload trang để Google Translate dịch
+    window.location.reload();
 }
 
 // 4.5. Xử lý khi chọn ngôn ngữ
@@ -138,7 +131,7 @@ langLinks.forEach(link => {
 });
 
 /* =========================================
-   5. ĐỌC NGÔN NGỮ HIỆN TẠI TỪ COOKIE
+   5. ĐỌC NGÔN NGỮ HIỆN TẠI TỪ COOKIE KHI LOAD TRANG
    ========================================= */
 window.addEventListener('load', function() {
     const cookies = document.cookie.split(';');
@@ -172,20 +165,3 @@ window.addEventListener('load', function() {
         }
     }
 });
-
-/* =========================================
-   6. ẨN BANNER GOOGLE TRANSLATE (nếu có)
-   ========================================= */
-function hideGoogleBanner() {
-    const bannerFrames = document.querySelectorAll('.goog-te-banner-frame, iframe.goog-te-banner-frame');
-    bannerFrames.forEach(frame => {
-        frame.style.display = 'none';
-        frame.style.visibility = 'hidden';
-    });
-    document.body.style.top = '0px';
-    document.body.style.position = 'static';
-    document.body.style.marginTop = '0px';
-}
-setInterval(hideGoogleBanner, 500);
-window.addEventListener('load', hideGoogleBanner);
-document.addEventListener('DOMContentLoaded', hideGoogleBanner);
