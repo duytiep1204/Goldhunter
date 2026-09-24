@@ -28,8 +28,6 @@
             <a href="#tai-xuong">Tài xuống</a>
             <a href="#cau-hoi">Câu hỏi</a>
         </nav>
-
-        <!-- DROPDOWN NGÔN NGỮ -->
         <div class="lang-selector" id="langSelector">
             <button class="lang-btn" id="langBtn" type="button">
                 <span class="globe-icon">🌐</span>
@@ -63,7 +61,6 @@
 
     <!-- HERO SECTION -->
     <section class="hero">
-        <!-- NỘI DUNG BÊN TRÁI -->
         <div class="hero-content">
             <div class="badge">● AUTOMATED MT4/MT5 TRADING</div>
             <h1>GOLDHUNTER EA</h1>
@@ -74,8 +71,6 @@
                 <button class="btn-secondary">Cách hoạt động</button>
             </div>
         </div>
-
-        <!-- BIỂU ĐỒ TRADINGVIEW BÊN PHẢI - ĐÃ ĐỔI autosize: false -->
         <div class="hero-chart">
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
@@ -83,7 +78,7 @@
                 {
                     "autosize": false,
                     "width": "100%",
-                    "height": "500",
+                    "height": "650",
                     "symbol": "OANDA:XAUUSD",
                     "interval": "15",
                     "timezone": "Asia/Ho_Chi_Minh",
@@ -98,13 +93,13 @@
                     "hide_top_toolbar": false,
                     "save_image": false,
                     "details": false,
-                    "hide_legend": false,
+                    "hide_legend": true,
                     "withdateranges": true,
                     "studies": []
                 }
                 </script>
             </div>
-            <p class="chart-note">Live chart is for reference. GoldHunter EA still runs inside your own MetaTrader terminal.</p>
+            <p class="chart-note">Live chart is for reference only.</p>
         </div>
     </section>
 
@@ -164,44 +159,71 @@
 
     <!-- BẢNG GIÁ -->
     <section class="pricing" id="gia">
-        <h2>Nhận GOLDHUNTER EA</h2>
-        <p>Chọn cách bạn muốn bắt đầu.</p>
+        <h2 style="text-align: left;">Nhận GOLDHUNTER EA</h2>
+        <p style="text-align: left; color: #aaa; margin-bottom: 40px;">Chọn cách bạn muốn bắt đầu.</p>
         <div class="pricing-grid">
-            <div class="price-card">
-                <p class="plan-type">TÙY CHỌN MIỄN PHÍ</p>
+            <!-- CARD 1: MIỄN PHÍ -->
+            <div class="price-card free-card">
+                <p class="plan-type">
+                    <span class="dot-green"></span> TÙY CHỌN MIỄN PHÍ
+                </p>
                 <h3>Truy Cập Miễn Phí</h3>
-                <div class="price">MIỄN PHÍ</div>
-                <p>Qua đăng ký IB Vantage - Chỉ 1 tài khoản</p>
-                <ul>
-                    <li>1. Đăng ký bằng liên kết giới thiệu của tôi</li>
-                    <li>2. Hoàn tất xác minh danh tính (KYC)</li>
-                    <li>3. Mở tài khoản giao dịch MT5</li>
+                <div class="price free-price">MIỄN PHÍ</div>
+                <p class="subtitle">Qua đăng ký IB Vantage - Chỉ 1 tài khoản</p>
+                <ul class="step-list">
+                    <li><span class="num">1</span> Đăng ký bằng liên kết giới thiệu của tôi</li>
+                    <li><span class="num">2</span> Hoàn tất xác minh danh tính (KYC)</li>
+                    <li><span class="num">3</span> Mở tài khoản giao dịch MT5</li>
+                    <li><span class="num">4</span> Gửi MT5/MT4 ID + email</li>
                 </ul>
-                <button class="btn-primary full-width">Truy Cập Miễn Phí →</button>
+                <div class="warning-box">
+                    ⚠️ Phải đăng ký qua liên kết IB của tôi — chỉ áp dụng cho <strong>1 tài khoản MT5</strong>.
+                </div>
+                <a href="free-access.html" class="btn-free-access">Truy Cập Miễn Phí →</a>
             </div>
+
+            <!-- CARD 2: 5 TÀI KHOẢN -->
             <div class="price-card popular">
-                <p class="plan-type">PHỔ BIẾN NHẤT</p>
+                <p class="plan-type">
+                    <span class="icon-fire">🔥</span> PHỔ BIẾN NHẤT
+                </p>
                 <h3>5 tài khoản</h3>
                 <div class="price">$299 <span>USDT</span></div>
-                <p>Hoàn hảo cho hầu hết nhà giao dịch</p>
+                <p class="subtitle">Hoàn hảo cho hầu hết nhà giao dịch</p>
                 <ul>
                     <li>✓ Bản quyền trọn đời</li>
                     <li>✓ Tối đa 5 tài khoản MT5/MT4</li>
                     <li>✓ Dùng được với bất kỳ sàn nào</li>
+                    <li>✓ Miễn phí nâng cấp tất cả phiên bản tương lai</li>
+                    <li>✓ Ưu tiên trả lời tin nhắn</li>
                 </ul>
-                <button class="btn-secondary full-width">Mua Ngay - $299 USDT</button>
+                <button class="btn-primary full-width">🛒 Mua Ngay - $299 USDT</button>
             </div>
+
+            <!-- CARD 3: KHÔNG GIỚI HẠN -->
             <div class="price-card">
-                <p class="plan-type">KHÔNG GIỚI HẠN</p>
+                <p class="plan-type">
+                    <span class="icon-crown">👑</span> KHÔNG GIỚI HẠN
+                </p>
                 <h3>Không giới hạn</h3>
-                <div class="price">$885 <span>USDT</span></div>
-                <p>Dành cho nhà giao dịch quản lý nhiều tài khoản</p>
+                <div class="price">$885 <span>USDT</span> <span class="hot-badge">🔥 HOT</span></div>
+                <p class="subtitle">Dành cho nhà giao dịch quản lý nhiều tài khoản</p>
                 <ul>
                     <li>✓ Bản quyền trọn đời</li>
                     <li>✓ Không giới hạn tài khoản MT5/MT4</li>
                     <li>✓ Dùng được với bất kỳ sàn nào</li>
+                    <li>✓ Miễn phí nâng cấp tất cả phiên bản tương lai</li>
+                    <li>✓ Ưu tiên trả lời tin nhắn</li>
                 </ul>
-                <button class="btn-secondary full-width">Mua Ngay - $885 USDT</button>
+                <div class="countdown-box">
+                    <p class="countdown-label">UNLIMITED — NEW PRICE IN</p>
+                    <div class="countdown">
+                        <span class="time-block"><strong>15</strong><small>h</small></span>
+                        <span class="time-block"><strong>25</strong><small>m</small></span>
+                        <span class="time-block"><strong>53</strong><small>s</small></span>
+                    </div>
+                </div>
+                <button class="btn-primary full-width">🛒 Mua Ngay - $885 USDT</button>
             </div>
         </div>
     </section>
@@ -265,7 +287,6 @@
       new google.translate.TranslateElement({
         pageLanguage: 'vi',
         includedLanguages: 'en,ms,id,zh-CN,zh-TW,vi,th,ko,ja,tl,hi,es,pt,ru,fr,de,mn,kk,uz,en-ZA',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
         autoDisplay: false
       }, 'google_translate_element');
     }

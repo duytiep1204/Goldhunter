@@ -1,9 +1,12 @@
 /* =========================================
    1. ĐÓNG BANNER QUẢNG CÁO
    ========================================= */
-document.querySelector('.close-banner').addEventListener('click', function() {
-    document.querySelector('.top-banner').style.display = 'none';
-});
+const closeBannerBtn = document.querySelector('.close-banner');
+if (closeBannerBtn) {
+    closeBannerBtn.addEventListener('click', function() {
+        document.querySelector('.top-banner').style.display = 'none';
+    });
+}
 
 /* =========================================
    2. HIỆU ỨNG MỞ/ĐÓNG FAQ
@@ -37,20 +40,19 @@ const langBtn = document.getElementById('langBtn');
 const currentLangSpan = document.getElementById('currentLang');
 const langLinks = document.querySelectorAll('#langDropdown a');
 
-// 4.1. Mở/đóng dropdown
-langBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    langSelector.classList.toggle('open');
-});
+if (langBtn) {
+    langBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langSelector.classList.toggle('open');
+    });
 
-// 4.2. Đóng dropdown khi click ra ngoài
-document.addEventListener('click', (e) => {
-    if (!langSelector.contains(e.target)) {
-        langSelector.classList.remove('open');
-    }
-});
+    document.addEventListener('click', (e) => {
+        if (!langSelector.contains(e.target)) {
+            langSelector.classList.remove('open');
+        }
+    });
+}
 
-// 4.3. Tên hiển thị của các ngôn ngữ
 const langNames = {
     'vi': 'Tiếng Việt',
     'en': 'English',
@@ -74,7 +76,6 @@ const langNames = {
     'en-ZA': 'English (South Africa)'
 };
 
-// 4.4. Hàm xóa cookie googtrans
 function clearGoogleTranslateCookies() {
     const expire = 'expires=Thu, 01 Jan 1970 00:00:00 UTC';
     const hostname = window.location.hostname;
@@ -84,27 +85,22 @@ function clearGoogleTranslateCookies() {
     document.cookie = `googtrans=; ${expire}; path=${window.location.pathname};`;
 }
 
-// 4.5. Hàm đổi ngôn ngữ
 function changeLanguage(langCode) {
     clearGoogleTranslateCookies();
-    
     if (langCode === 'vi') {
         window.location.reload();
         return;
     }
-    
     const hostname = window.location.hostname;
     document.cookie = `googtrans=/vi/${langCode}; path=/;`;
     if (hostname && hostname !== 'localhost' && hostname !== '127.0.0.1') {
         document.cookie = `googtrans=/vi/${langCode}; path=/; domain=${hostname};`;
     }
-    
     setTimeout(() => {
         window.location.reload();
     }, 100);
 }
 
-// 4.6. Xử lý khi chọn ngôn ngữ
 langLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -123,8 +119,12 @@ langLinks.forEach(link => {
             link.appendChild(checkSpan);
         }
 
-        currentLangSpan.textContent = langNames[langCode] || langCode;
-        langSelector.classList.remove('open');
+        if (currentLangSpan) {
+            currentLangSpan.textContent = langNames[langCode] || langCode;
+        }
+        if (langSelector) {
+            langSelector.classList.remove('open');
+        }
         changeLanguage(langCode);
     });
 });
@@ -141,7 +141,7 @@ window.addEventListener('load', function() {
             const parts = value.split('/');
             const currentLangCode = parts[parts.length - 1];
             
-            if (currentLangCode && langNames[currentLangCode]) {
+            if (currentLangCode && langNames[currentLangCode] && currentLangSpan) {
                 currentLangSpan.textContent = langNames[currentLangCode];
                 
                 langLinks.forEach(l => {
@@ -181,3 +181,51 @@ function hideGoogleBanner() {
 setInterval(hideGoogleBanner, 500);
 window.addEventListener('load', hideGoogleBanner);
 document.addEventListener('DOMContentLoaded', hideGoogleBanner);
+
+/* =========================================
+   7. HÀM CHO TRANG FREE ACCESS
+   ========================================= */
+
+// Copy mã giới thiệu
+function copyRefCode(event) {
+    const code = 'UN60VTqp';
+    navigator.clipboard.writeText(code).then(() => {
+        const btn = event.target;
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '✓ Đã sao chép';
+        btn.style.color = '#22c55e';
+        btn.style.borderColor = '#22c55e';
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.color = '';
+            btn.style.borderColor = '';
+        }, 2000);
+    }).catch(() => {
+        alert('Mã giới thiệu: ' + code);
+    });
+}
+
+// Submit form free access
+function submitFreeForm(event) {
+    event.preventDefault();
+    const mt5Id = document.getElementById('mt5-id').value;
+    const email = document.getElementById('email').value;
+    const telegram = document.getElementById('telegram').value;
+
+    if (!mt5Id || !email) {
+        alert('Vui lòng nhập đầy đủ ID tài khoản MT5 và Email.');
+        return;
+    }
+
+    const btn = event.target.querySelector('.btn-submit');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '✅ Đã gửi! Đang xử lý...';
+    btn.style.background = '#22c55e';
+
+    setTimeout(() => {
+        alert('Cảm ơn bạn! Chúng tôi đã nhận được yêu cầu.\n\nID MT5: ' + mt5Id + '\nEmail: ' + email + '\nTelegram: ' + (telegram || 'không có') + '\n\nChúng tôi sẽ xác minh và gửi thông tin truy cập qua email trong vòng vài phút.');
+        btn.innerHTML = originalText;
+        btn.style.background = '';
+        event.target.reset();
+    }, 1000);
+}

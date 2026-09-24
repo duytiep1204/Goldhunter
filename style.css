@@ -223,12 +223,12 @@ nav a:hover {
 }
 
 /* =========================================
-   HERO SECTION - ĐÃ SỬA align-items: flex-start
+   HERO SECTION
    ========================================= */
 .hero {
     display: flex;
     padding: 80px 50px;
-    align-items: flex-start;   /* Đổi từ center sang flex-start để chart cao lên */
+    align-items: flex-start;
     gap: 60px;
     max-width: 1400px;
     margin: 0 auto;
@@ -316,33 +316,24 @@ nav a:hover {
     color: #ffd700;
 }
 
-.hero-chart img {
-    width: 100%;
-    border-radius: 15px;
-    border: 1px solid #333;
-}
-
-.chart-note 
-{
-    font-size: 6px !important;
-    color: #666 !important;
+.chart-note {
+    font-size: 10px !important;
+    color: #666;
     text-align: center;
     margin-top: 6px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%;
-    display: block;     /* Đảm bảo không bị ảnh hưởng bởi flex */
-    line-height: 1.0;   /* Giảm chiều cao dòng */
 }
 
 /* =========================================
-   TRADINGVIEW CHART WIDGET - CHIỀU CAO 650px
+   TRADINGVIEW CHART WIDGET
    ========================================= */
 .tradingview-widget-container {
     position: relative;
     width: 100%;
-    height: 500px; /* Khớp với "height": "650" trong script index.html */
+    height: 650px;
     border-radius: 15px;
     overflow: hidden;
     border: 1px solid #333;
@@ -459,7 +450,7 @@ nav a:hover {
     padding: 80px 50px;
     max-width: 1400px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
 }
 
 .pricing-grid {
@@ -467,7 +458,6 @@ nav a:hover {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 50px;
-    text-align: left;
 }
 
 .price-card {
@@ -482,6 +472,26 @@ nav a:hover {
 .price-card.popular {
     border-color: #ffd700;
     box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
+}
+
+.price-card.free-card {
+    border: 1px solid #4a7c59;
+    background: linear-gradient(180deg, #0f1a12 0%, #111 100%);
+}
+
+.dot-green {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.icon-fire, .icon-crown {
+    font-size: 12px;
+    margin-right: 4px;
 }
 
 .plan-type {
@@ -504,12 +514,18 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
+.free-price {
+    color: #22c55e !important;
+    font-size: 48px;
+    font-weight: 800;
+}
+
 .price span {
     font-size: 16px;
     color: #888;
 }
 
-.price-card p {
+.subtitle {
     color: #888;
     font-size: 14px;
     margin-bottom: 20px;
@@ -525,6 +541,118 @@ nav a:hover {
     margin-bottom: 10px;
     font-size: 14px;
     color: #ccc;
+}
+
+.step-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.step-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.step-list .num {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    background: #ffd700;
+    color: #000;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.warning-box {
+    background: rgba(220, 38, 38, 0.1);
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    color: #f87171;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.btn-free-access {
+    display: block;
+    text-align: center;
+    background: #22c55e;
+    color: #000;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.3s;
+    margin-top: auto;
+}
+
+.btn-free-access:hover {
+    background: #16a34a;
+    transform: translateY(-2px);
+}
+
+.hot-badge {
+    display: inline-block;
+    background: #ffd700;
+    color: #000;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.countdown-box {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.countdown-label {
+    font-size: 11px;
+    color: #888;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.countdown {
+    display: flex;
+    gap: 10px;
+}
+
+.time-block {
+    background: #000;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 8px 14px;
+    text-align: center;
+    flex: 1;
+}
+
+.time-block strong {
+    display: block;
+    font-size: 22px;
+    color: #ffd700;
+    font-weight: 800;
+}
+
+.time-block small {
+    font-size: 11px;
+    color: #888;
 }
 
 .full-width {
@@ -682,6 +810,375 @@ footer {
 }
 
 /* =========================================
+   TRANG FREE ACCESS
+   ========================================= */
+.free-hero {
+    text-align: center;
+    padding: 60px 50px 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.badge-green {
+    display: inline-block;
+    background: #0a2a15;
+    border: 1px solid #22c55e;
+    color: #22c55e;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.free-hero h1 {
+    font-size: 56px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 16px;
+}
+
+.highlight-gold {
+    color: #ffd700;
+}
+
+.free-subtitle {
+    color: #aaa;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.quick-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.quick-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #aaa;
+    font-weight: 500;
+}
+
+.quick-step.active {
+    color: #ffd700;
+    font-weight: 700;
+}
+
+.qs-num {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    background: #333;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.quick-step.active .qs-num {
+    background: #ffd700;
+    color: #000;
+}
+
+.qs-arrow {
+    color: #555;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.already-done {
+    color: #ffd700;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.already-done a {
+    color: #ffd700;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.steps-detail {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 30px 60px;
+}
+
+.step-block {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    background: #0d0d0d;
+    border: 1px solid #222;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.step-block.highlight-step {
+    border-color: #ffd700;
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.08);
+}
+
+.step-badge {
+    background: #ffd700;
+    color: #000;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.step-body {
+    flex: 1;
+}
+
+.step-body h2 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.step-body > p {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.inner-card {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 16px;
+}
+
+.inner-card.small {
+    padding: 16px 20px;
+}
+
+.inner-card h3 {
+    font-size: 18px;
+    color: #ffd700;
+    margin-bottom: 8px;
+}
+
+.inner-card p {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.btn-gold-full {
+    display: block;
+    width: 100%;
+    background: #ffd700;
+    color: #000;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 16px;
+}
+
+.btn-gold-full:hover {
+    background: #e6c200;
+}
+
+.referral-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0a0a0a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+}
+
+.ref-label {
+    font-size: 11px;
+    color: #888;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.ref-code {
+    font-size: 16px;
+    color: #ffd700;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+}
+
+.btn-copy {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-copy:hover {
+    border-color: #ffd700;
+    color: #ffd700;
+}
+
+.existing-account {
+    background: #0a0a0a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 14px 18px;
+}
+
+.exist-title {
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.exist-sub {
+    color: #888 !important;
+    font-size: 13px;
+    margin: 0 !important;
+}
+
+.warning-inline {
+    background: rgba(255, 215, 0, 0.08);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    color: #ffd700;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.setup-label {
+    font-size: 11px;
+    color: #ffd700;
+    letter-spacing: 1px;
+    margin-bottom: 10px !important;
+    font-weight: 700;
+}
+
+.setup-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-top: 1px solid #222;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.setup-row strong {
+    color: #fff;
+}
+
+.free-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.free-form label {
+    font-size: 12px;
+    color: #ccc;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-top: 12px;
+}
+
+.free-form label .optional {
+    color: #666;
+    font-weight: 400;
+    font-size: 11px;
+    text-transform: lowercase;
+}
+
+.free-form input {
+    background: #0a0a0a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 14px 18px;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s;
+}
+
+.free-form input:focus {
+    outline: none;
+    border-color: #ffd700;
+    background: #111;
+}
+
+.free-form input::placeholder {
+    color: #555;
+}
+
+.helper {
+    font-size: 12px;
+    color: #666;
+    margin: 4px 0 16px;
+}
+
+.btn-submit {
+    background: #ffd700;
+    color: #000;
+    border: none;
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 12px;
+}
+
+.btn-submit:hover {
+    background: #e6c200;
+    transform: translateY(-2px);
+}
+
+.free-footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid #1a1a1a;
+    color: #666;
+    font-size: 13px;
+}
+
+.telegram-icon {
+    font-size: 24px;
+    margin: 16px 0;
+    color: #ffd700;
+}
+
+/* =========================================
    RESPONSIVE
    ========================================= */
 @media (max-width: 1200px) {
@@ -740,8 +1237,36 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* TradingView trên mobile */
     .tradingview-widget-container {
         height: 400px;
+    }
+
+    .free-hero {
+        padding: 40px 20px 30px;
+    }
+
+    .free-hero h1 {
+        font-size: 36px;
+    }
+
+    .step-block {
+        flex-direction: column;
+        padding: 24px 20px;
+    }
+
+    .step-body h2 {
+        font-size: 20px;
+    }
+
+    .quick-steps {
+        font-size: 11px;
+    }
+
+    .quick-step span:not(.qs-num) {
+        display: none;
+    }
+
+    .quick-step.active span:not(.qs-num) {
+        display: inline;
     }
 }

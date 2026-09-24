@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truy Cập Miễn Phí - GoldHunter EA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER ĐƠN GIẢN -->
+    <header>
+        <div class="logo">
+            <div class="logo-icon">GH</div>
+            <span>GOLDHUNTER EA</span>
+        </div>
+        <nav>
+            <a href="index.html">← Quay lại trang chủ</a>
+        </nav>
+    </header>
+
+    <!-- HERO CỦA TRANG FREE ACCESS -->
+    <section class="free-hero">
+        <div class="badge-green">● TRUY CẬP MIỄN PHÍ</div>
+        <h1>Cách Nhận <span class="highlight-gold">Truy Cập Miễn Phí</span></h1>
+        <p class="free-subtitle">Làm theo các bước đơn giản dưới đây để nhận GOLDHUNTER EA miễn phí.</p>
+
+        <!-- BƯỚC NHANH -->
+        <div class="quick-steps">
+            <div class="quick-step">
+                <span class="qs-num">1</span>
+                <span>Đăng Ký Qua Liên Kết Của Tôi</span>
+            </div>
+            <span class="qs-arrow">›</span>
+            <div class="quick-step">
+                <span class="qs-num">2</span>
+                <span>Hoàn Tất Xác Minh (KYC)</span>
+            </div>
+            <span class="qs-arrow">›</span>
+            <div class="quick-step">
+                <span class="qs-num">3</span>
+                <span>Mở Tài Khoản Giao Dịch MT5</span>
+            </div>
+            <span class="qs-arrow">›</span>
+            <div class="quick-step active">
+                <span class="qs-num">4</span>
+                <span>Nhận quyền truy cập miễn phí</span>
+            </div>
+        </div>
+
+        <p class="already-done">Already done these? <a href="#form-section">Skip to the form ↓</a></p>
+    </section>
+
+    <!-- NỘI DUNG 4 BƯỚC CHI TIẾT -->
+    <section class="steps-detail" id="form-section">
+
+        <!-- BƯỚC 01 -->
+        <div class="step-block">
+            <div class="step-badge">01</div>
+            <div class="step-body">
+                <h2>Đăng Ký Qua Liên Kết Của Tôi</h2>
+                <div class="inner-card">
+                    <h3>Vantage</h3>
+                    <p>Đăng ký tài khoản mới với Vantage bằng liên kết giới thiệu của tôi bên dưới.</p>
+                    <button class="btn-gold-full">🔗 Mở tài khoản mới (qua link của tôi)</button>
+
+                    <div class="referral-box">
+                        <div>
+                            <p class="ref-label">MÃ GIỚI THIỆU</p>
+                            <p class="ref-code">UN60VTqp</p>
+                        </div>
+                        <button class="btn-copy" onclick="copyRefCode(event)">📋 Sao chép</button>
+                    </div>
+
+                    <div class="existing-account">
+                        <p class="exist-title">📩 Tôi đã có tài khoản</p>
+                        <p class="exist-sub">Đổi IB / Chuyển sang link của chúng tôi</p>
+                    </div>
+                </div>
+                <div class="warning-inline">
+                    ⚠️ Phải đăng ký qua liên kết IB của tôi — nếu không sẽ không đủ điều kiện.
+                </div>
+            </div>
+        </div>
+
+        <!-- BƯỚC 02 -->
+        <div class="step-block">
+            <div class="step-badge">02</div>
+            <div class="step-body">
+                <h2>Hoàn Tất Xác Minh (KYC)</h2>
+                <p>Xác minh đầy đủ danh tính của bạn trong Vantage. Đây là yêu cầu bắt buộc trước khi bạn có thể giao dịch.</p>
+            </div>
+        </div>
+
+        <!-- BƯỚC 03 -->
+        <div class="step-block">
+            <div class="step-badge">03</div>
+            <div class="step-body">
+                <h2>Mở Tài Khoản Giao Dịch MT5</h2>
+                <p>Tạo tài khoản giao dịch MT5 mới trong Vantage.</p>
+                <div class="inner-card small">
+                    <p class="setup-label">THIẾT LẬP TÀI KHOẢN ĐỀ XUẤT</p>
+                    <div class="setup-row">
+                        <span>Loại tài khoản</span>
+                        <strong>Tài khoản Cent</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BƯỚC 04 - FORM -->
+        <div class="step-block highlight-step">
+            <div class="step-badge">04</div>
+            <div class="step-body">
+                <h2>Nhận quyền truy cập miễn phí</h2>
+                <p>Nhập ID tài khoản MT5 và email đã đăng ký của bạn. Chúng tôi sẽ tự động xác minh tài khoản và gửi thông tin truy cập GoldHunter qua email.</p>
+
+                <form class="free-form" onsubmit="submitFreeForm(event)">
+                    <label for="mt5-id">ID TÀI KHOẢN MT5</label>
+                    <input type="text" id="mt5-id" placeholder="12345678" required>
+
+                    <label for="email">EMAIL ĐÃ ĐĂNG KÝ</label>
+                    <input type="email" id="email" placeholder="you@example.com" required>
+
+                    <label for="telegram">TELEGRAM <span class="optional">optional</span></label>
+                    <input type="text" id="telegram" placeholder="@username">
+                    <p class="helper">So we can reach you if there is a problem with your key.</p>
+
+                    <button type="submit" class="btn-submit">📩 Xác minh & nhận quyền truy cập</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="free-footer">
+        <p>Just opened your account? It can take a few minutes to reach us — try again shortly.</p>
+        <div class="telegram-icon">✈️</div>
+        <p>© 2026 GOLDHUNTER EA bởi Abang Rimba</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
