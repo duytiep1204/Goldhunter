@@ -323,10 +323,14 @@ nav a:hover {
 }
 
 .chart-note {
-    font-size: 6px;
+    font-size: 10px;
     color: #666;
     text-align: center;
     margin-top: 6px;
+    white-space: nowrap;      /* ← Không cho phép xuống dòng */
+    overflow: hidden;          /* ← Ẩn nếu tràn */
+    text-overflow: ellipsis;   /* ← Hiện dấu "..." nếu tràn */
+    max-width: 100%;
 }
 
 /* =========================================
