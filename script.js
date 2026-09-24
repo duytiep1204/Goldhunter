@@ -54,26 +54,12 @@ if (langBtn) {
 }
 
 const langNames = {
-    'vi': 'Tiếng Việt',
-    'en': 'English',
-    'ms': 'Bahasa Melayu',
-    'id': 'Bahasa Indonesia',
-    'zh-CN': '简体中文',
-    'zh-TW': '繁體中文',
-    'th': 'ไทย',
-    'ko': '한국어',
-    'ja': '日本語',
-    'tl': 'Filipino',
-    'hi': 'हिन्दी',
-    'es': 'Español',
-    'pt': 'Português (Brasil)',
-    'ru': 'Русский',
-    'fr': 'Français',
-    'de': 'Deutsch',
-    'mn': 'Монгол',
-    'kk': 'Қазақша',
-    'uz': "O'zbekcha",
-    'en-ZA': 'English (South Africa)'
+    'vi': 'Tiếng Việt', 'en': 'English', 'ms': 'Bahasa Melayu',
+    'id': 'Bahasa Indonesia', 'zh-CN': '简体中文', 'zh-TW': '繁體中文',
+    'th': 'ไทย', 'ko': '한국어', 'ja': '日本語', 'tl': 'Filipino',
+    'hi': 'हिन्दी', 'es': 'Español', 'pt': 'Português (Brasil)',
+    'ru': 'Русский', 'fr': 'Français', 'de': 'Deutsch', 'mn': 'Монгол',
+    'kk': 'Қазақша', 'uz': "O'zbekcha", 'en-ZA': 'English (South Africa)'
 };
 
 function clearGoogleTranslateCookies() {
@@ -205,27 +191,132 @@ function copyRefCode(event) {
     });
 }
 
-// Submit form free access
-function submitFreeForm(event) {
-    event.preventDefault();
-    const mt5Id = document.getElementById('mt5-id').value;
-    const email = document.getElementById('email').value;
-    const telegram = document.getElementById('telegram').value;
-
-    if (!mt5Id || !email) {
-        alert('Vui lòng nhập đầy đủ ID tài khoản MT5 và Email.');
-        return;
-    }
-
-    const btn = event.target.querySelector('.btn-submit');
-    const originalText = btn.innerHTML;
-    btn.innerHTML = '✅ Đã gửi! Đang xử lý...';
-    btn.style.background = '#22c55e';
-
-    setTimeout(() => {
-        alert('Cảm ơn bạn! Chúng tôi đã nhận được yêu cầu.\n\nID MT5: ' + mt5Id + '\nEmail: ' + email + '\nTelegram: ' + (telegram || 'không có') + '\n\nChúng tôi sẽ xác minh và gửi thông tin truy cập qua email trong vòng vài phút.');
-        btn.innerHTML = originalText;
-        btn.style.background = '';
-        event.target.reset();
-    }, 1000);
+// Mở/đóng modal người dùng đã có tài khoản
+function openExistingModal() {
+    document.getElementById('existingModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
 }
+
+function closeExistingModal() {
+    document.getElementById('existingModal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Copy text đơn giản
+function copyText(text, event) {
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = event.target;
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '✓ Đã copy';
+        btn.style.color = '#22c55e';
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.color = '';
+        }, 1500);
+    }).catch(() => {
+        alert('Nội dung: ' + text);
+    });
+}
+
+// Copy toàn bộ nội dung email body
+function copyBody(event) {
+    const userName = document.getElementById('userNameInput').value || '(Your Name)';
+    const userEmail = document.getElementById('userEmailInput').value || '[Your Email]';
+    
+    const bodyText = `Dear Iskandar,
+
+Please assist to move my account under IB (32368874).
+
+My registered email: ${userEmail}
+
+Thank you.`;
+    
+    navigator.clipboard.writeText(bodyText).then(() => {
+        const btn = event.target;
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '✓ Đã copy';
+        btn.style.color = '#22c55e';
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.color = '';
+        }, 1500);
+    }).catch(() => {
+        alert(bodyText);
+    });
+}
+
+// Đóng modal khi click ra ngoài
+document.addEventListener('click', (e) => {
+    const modal = document.getElementById('existingModal');
+    if (modal && e.target === modal) {
+        closeExistingModal();
+    }
+});
+
+// Submit form gửi mail đến duytiep1204@gmail.com
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('accessForm');
+    if (!form) return;
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const mt5Id = document.getElementById('mt5-id').value;
+        const email = document.getElementById('email').value;
+        const telegram = document.getElementById('telegram').value;
+
+        if (!mt5Id || !email) {
+            alert('Vui lòng nhập đầy đủ ID tài khoản MT5 và Email.');
+            return;
+        }
+
+        const btn = form.querySelector('.btn-submit');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '⏳ Đang gửi...';
+        btn.disabled = true;
+        btn.style.background = '#e6c200';
+
+        // Gửi form qua FormSubmit.co đến email duytiep1204@gmail.com
+        fetch('https://formsubmit.co/ajax/duytiep1204@gmail.com', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                _subject: '🔔 Yêu cầu Truy Cập Miễn Phí GoldHunter EA',
+                _template: 'table',
+                'ID MT5': mt5Id,
+                'Email người dùng': email,
+                'Telegram': telegram || 'Không có',
+                'Thời gian gửi': new Date().toLocaleString('vi-VN'),
+                'Trang gửi': window.location.href
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            btn.innerHTML = '✅ Đã gửi thành công!';
+            btn.style.background = '#22c55e';
+            
+            setTimeout(() => {
+                alert('✅ Cảm ơn bạn!\n\nChúng tôi đã nhận được yêu cầu:\n\n• ID MT5: ' + mt5Id + '\n• Email: ' + email + '\n• Telegram: ' + (telegram || 'Không có') + '\n\nChúng tôi sẽ xác minh và gửi thông tin truy cập qua email trong vòng vài phút.');
+                btn.innerHTML = originalText;
+                btn.style.background = '';
+                btn.disabled = false;
+                form.reset();
+            }, 500);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            btn.innerHTML = '❌ Lỗi, thử lại!';
+            btn.style.background = '#ef4444';
+            
+            setTimeout(() => {
+                alert('Có lỗi khi gửi. Vui lòng thử lại hoặc liên hệ qua Telegram.');
+                btn.innerHTML = originalText;
+                btn.style.background = '';
+                btn.disabled = false;
+            }, 1000);
+        });
+    });
+});

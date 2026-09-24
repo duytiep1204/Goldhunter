@@ -63,7 +63,7 @@
                 <div class="inner-card">
                     <h3>Vantage</h3>
                     <p>Đăng ký tài khoản mới với Vantage bằng liên kết giới thiệu của tôi bên dưới.</p>
-                    <button class="btn-gold-full">🔗 Mở tài khoản mới (qua link của tôi)</button>
+                    <a href="https://vigco.co/la-com-inv/vi/Pn53NvR8" target="_blank" class="btn-gold-full">🔗 Mở tài khoản mới (qua link của tôi)</a>
 
                     <div class="referral-box">
                         <div>
@@ -73,7 +73,7 @@
                         <button class="btn-copy" onclick="copyRefCode(event)">📋 Sao chép</button>
                     </div>
 
-                    <div class="existing-account">
+                    <div class="existing-account" onclick="openExistingModal()" style="cursor: pointer;">
                         <p class="exist-title">📩 Tôi đã có tài khoản</p>
                         <p class="exist-sub">Đổi IB / Chuyển sang link của chúng tôi</p>
                     </div>
@@ -116,15 +116,15 @@
                 <h2>Nhận quyền truy cập miễn phí</h2>
                 <p>Nhập ID tài khoản MT5 và email đã đăng ký của bạn. Chúng tôi sẽ tự động xác minh tài khoản và gửi thông tin truy cập GoldHunter qua email.</p>
 
-                <form class="free-form" onsubmit="submitFreeForm(event)">
+                <form class="free-form" id="accessForm">
                     <label for="mt5-id">ID TÀI KHOẢN MT5</label>
-                    <input type="text" id="mt5-id" placeholder="12345678" required>
+                    <input type="text" id="mt5-id" name="mt5_id" placeholder="12345678" required>
 
                     <label for="email">EMAIL ĐÃ ĐĂNG KÝ</label>
-                    <input type="email" id="email" placeholder="you@example.com" required>
+                    <input type="email" id="email" name="user_email" placeholder="you@example.com" required>
 
                     <label for="telegram">TELEGRAM <span class="optional">optional</span></label>
-                    <input type="text" id="telegram" placeholder="@username">
+                    <input type="text" id="telegram" name="telegram" placeholder="@username">
                     <p class="helper">So we can reach you if there is a problem with your key.</p>
 
                     <button type="submit" class="btn-submit">📩 Xác minh & nhận quyền truy cập</button>
@@ -138,8 +138,59 @@
     <footer class="free-footer">
         <p>Just opened your account? It can take a few minutes to reach us — try again shortly.</p>
         <div class="telegram-icon">✈️</div>
-        <p>© 2026 GOLDHUNTER EA bởi GoldenPrince</p>
+        <p>© 2026 GOLDHUNTER EA bởi GoldPrince</p>
     </footer>
+
+    <!-- =============================================
+         MODAL: DÀNH CHO NGƯỜI DÙNG ĐÃ CÓ TÀI KHOẢN
+         ============================================= -->
+    <div class="modal-overlay" id="existingModal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeExistingModal()">✕</button>
+
+            <h2>Dành Cho Người Dùng Đã Có Tài Khoản</h2>
+            <p class="modal-desc">Nếu bạn đã có tài khoản Vantage, vui lòng chuyển tài khoản của bạn sang mạng lưới IB của chúng tôi trước. Sau khi Vantage phê duyệt việc chuyển IB, chúng tôi sẽ kích hoạt quyền truy cập GOLDHUNTER EA cho bạn.</p>
+
+            <p class="modal-label">Sử dụng mẫu email bên dưới:</p>
+
+            <!-- TO -->
+            <div class="email-block">
+                <div class="email-header">
+                    <span class="email-tag">TO</span>
+                    <button class="btn-copy-small" onclick="copyText('iskandar.my@vantagemarkets.com', event)">📋 Copy</button>
+                </div>
+                <p class="email-content" id="email-to">iskandar.my@vantagemarkets.com</p>
+            </div>
+
+            <!-- SUBJECT -->
+            <div class="email-block">
+                <div class="email-header">
+                    <span class="email-tag">SUBJECT</span>
+                    <button class="btn-copy-small" onclick="copyText('Account reassign - Your Name', event)">📋 Copy</button>
+                </div>
+                <p class="email-content" id="email-subject">Account reassign - <input type="text" id="userNameInput" class="inline-input" placeholder="(Your Name)"></p>
+            </div>
+
+            <!-- BODY -->
+            <div class="email-block body-block">
+                <div class="email-header">
+                    <span class="email-tag">BODY</span>
+                    <button class="btn-copy-small" onclick="copyBody(event)">📋 Copy</button>
+                </div>
+                <div class="email-body" id="emailBody">
+                    <p>Dear Iskandar,</p>
+                    <br>
+                    <p>Please assist to move my account under IB <strong>(32368874)</strong>.</p>
+                    <br>
+                    <p>My registered email: <input type="email" id="userEmailInput" class="inline-input" placeholder="[Your Email]"></p>
+                    <br>
+                    <p>Thank you.</p>
+                </div>
+            </div>
+
+            <p class="modal-note">Vui lòng chờ Vantage phê duyệt trước khi yêu cầu kích hoạt EA.</p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
