@@ -6,7 +6,6 @@
     font-family: 'Inter', sans-serif;
 }
 
-/* Cuộn trang mượt khi bấm menu */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
@@ -16,17 +15,89 @@ body {
     background-color: #0a0a0a;
     color: #ffffff;
     line-height: 1.6;
-    top: 0 !important; /* Khắc phục Google Translate đẩy body xuống */
+    top: 0 !important;
+    position: static !important;
 }
 
-/* Ẩn banner Google Translate */
-.goog-te-banner-frame {
+/* =========================================
+   GOOGLE TRANSLATE - CHỈ ẨN BANNER, KHÔNG ẨN WIDGET
+   ========================================= */
+
+/* Ẩn banner quảng cáo trên cùng của Google Translate */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Ẩn tooltip khi hover */
+#goog-gt-tt,
+.goog-tooltip,
+.goog-tooltip:hover {
     display: none !important;
 }
-.skiptranslate {
+
+/* Ẩn logo "Powered by Google" nhưng KHÔNG ẩn widget */
+.goog-logo-link {
     display: none !important;
 }
-#goog-gt-tt {
+
+/* Container chính của widget */
+#google_translate_element {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 8px 14px;
+    transition: all 0.3s;
+    cursor: pointer;
+    min-width: 180px;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#google_translate_element:hover {
+    border-color: #ffd700;
+}
+
+/* Gadget bên trong */
+#google_translate_element .goog-te-gadget {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0 !important;
+    color: transparent !important;
+    line-height: 1 !important;
+}
+
+#google_translate_element .goog-te-gadget-simple {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+#google_translate_element .goog-te-gadget-simple .goog-te-menu-value {
+    color: #fff !important;
+    font-size: 14px !important;
+    font-weight: 600;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px;
+}
+
+#google_translate_element .goog-te-gadget-simple .goog-te-menu-value span {
+    color: #fff !important;
+    font-size: 14px !important;
+    border: none !important;
+}
+
+#google_translate_element .goog-te-gadget-simple .goog-te-menu-value img {
+    display: none !important;
+}
+
+#google_translate_element .goog-te-gadget-icon {
     display: none !important;
 }
 
@@ -90,59 +161,6 @@ nav a {
 }
 nav a:hover {
     color: #ffd700;
-}
-
-/* =========================================
-   GOOGLE TRANSLATE STYLING
-   ========================================= */
-#google_translate_element {
-    background: #1a1a1a;
-    border: 1px solid #333;
-    border-radius: 20px;
-    padding: 8px 14px;
-    color: #fff;
-    transition: all 0.3s;
-    cursor: pointer;
-}
-#google_translate_element:hover {
-    border-color: #ffd700;
-}
-#google_translate_element .goog-te-gadget {
-    font-family: 'Inter', sans-serif !important;
-    font-size: 0 !important;
-    color: transparent !important;
-    line-height: 1 !important;
-}
-#google_translate_element .goog-te-gadget-simple {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-}
-#google_translate_element .goog-te-gadget-simple .goog-te-menu-value {
-    color: #fff !important;
-    font-size: 14px !important;
-    font-weight: 600;
-    margin: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px;
-}
-#google_translate_element .goog-te-gadget-simple .goog-te-menu-value span {
-    color: #fff !important;
-    font-size: 14px !important;
-    border: none !important;
-}
-#google_translate_element .goog-te-gadget-simple .goog-te-menu-value img {
-    display: none !important;
-}
-#google_translate_element .goog-te-gadget-icon {
-    display: none !important;
-}
-/* Ẩn dòng chữ "Select Language" mặc định của Google */
-#google_translate_element .goog-te-gadget-simple .goog-te-menu-value span:first-child {
-    display: none;
 }
 
 /* Hero Section */
@@ -503,7 +521,7 @@ footer {
     object-fit: cover;
 }
 
-/* Responsive cho màn hình nhỏ */
+/* Responsive */
 @media (max-width: 900px) {
     header {
         flex-direction: column;
