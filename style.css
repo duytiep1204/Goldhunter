@@ -335,7 +335,7 @@ nav a:hover {
 .tradingview-widget-container {
     position: relative;
     width: 100%;
-    height: 600px; /* Tăng từ 450px lên 600px để chart cao, to như GoldTrap */
+    height: 1400px; /* Tăng từ 450px lên 600px để chart cao, to như GoldTrap */
     border-radius: 15px;
     overflow: hidden;
     border: 1px solid #333;
