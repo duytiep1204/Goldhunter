@@ -50,7 +50,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// 4.3. Tên hiển thị
+// 4.3. Tên hiển thị của các ngôn ngữ
 const langNames = {
     'vi': 'Tiếng Việt',
     'en': 'English',
@@ -78,9 +78,6 @@ const langNames = {
 function clearGoogleTranslateCookies() {
     const expire = 'expires=Thu, 01 Jan 1970 00:00:00 UTC';
     const hostname = window.location.hostname;
-    const paths = ['/', '/vi/', window.location.pathname];
-    
-    // Xóa ở nhiều path và domain khác nhau để chắc chắn
     document.cookie = `googtrans=; ${expire}; path=/;`;
     document.cookie = `googtrans=; ${expire}; path=/; domain=${hostname};`;
     document.cookie = `googtrans=; ${expire}; path=/; domain=.${hostname};`;
@@ -89,23 +86,19 @@ function clearGoogleTranslateCookies() {
 
 // 4.5. Hàm đổi ngôn ngữ
 function changeLanguage(langCode) {
-    // Xóa cookie cũ trước
     clearGoogleTranslateCookies();
     
     if (langCode === 'vi') {
-        // Về tiếng Việt: chỉ cần xóa cookie và reload
         window.location.reload();
         return;
     }
     
-    // Ghi cookie googtrans mới
     const hostname = window.location.hostname;
     document.cookie = `googtrans=/vi/${langCode}; path=/;`;
     if (hostname && hostname !== 'localhost' && hostname !== '127.0.0.1') {
         document.cookie = `googtrans=/vi/${langCode}; path=/; domain=${hostname};`;
     }
     
-    // Đợi 100ms cho cookie được ghi, sau đó reload
     setTimeout(() => {
         window.location.reload();
     }, 100);
@@ -117,7 +110,6 @@ langLinks.forEach(link => {
         e.preventDefault();
         const langCode = link.getAttribute('data-lang');
 
-        // Cập nhật UI
         langLinks.forEach(l => {
             l.classList.remove('active');
             const oldCheck = l.querySelector('.check');
@@ -131,19 +123,14 @@ langLinks.forEach(link => {
             link.appendChild(checkSpan);
         }
 
-        // Cập nhật tên ngôn ngữ trên nút
         currentLangSpan.textContent = langNames[langCode] || langCode;
-
-        // Đóng dropdown
         langSelector.classList.remove('open');
-
-        // Đổi ngôn ngữ
         changeLanguage(langCode);
     });
 });
 
 /* =========================================
-   5. ĐỌC NGÔN NGỮ HIỆN TẠI TỪ COOKIE KHI LOAD
+   5. ĐỌC NGÔN NGỮ HIỆN TẠI TỪ COOKIE
    ========================================= */
 window.addEventListener('load', function() {
     const cookies = document.cookie.split(';');

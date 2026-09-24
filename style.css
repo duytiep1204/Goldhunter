@@ -223,12 +223,12 @@ nav a:hover {
 }
 
 /* =========================================
-   HERO SECTION - ĐÃ CHỈNH SỬA CHO CHART TO HƠN
+   HERO SECTION - ĐÃ SỬA align-items: flex-start
    ========================================= */
 .hero {
     display: flex;
     padding: 80px 50px;
-    align-items: center;
+    align-items: flex-start;   /* Đổi từ center sang flex-start để chart cao lên */
     gap: 60px;
     max-width: 1400px;
     margin: 0 auto;
@@ -240,7 +240,7 @@ nav a:hover {
 }
 
 .hero-chart {
-    flex: 1.6;
+    flex: 1.2;
     min-width: 0;
 }
 
@@ -305,7 +305,7 @@ nav a:hover {
     border: 1px solid #444;
     padding: 15px 30px;
     border-radius: 30px;
-    font-weight: 1400;
+    font-weight: 600;
     cursor: pointer;
     font-size: 16px;
     transition: all 0.3s;
@@ -330,12 +330,12 @@ nav a:hover {
 }
 
 /* =========================================
-   TRADINGVIEW CHART WIDGET - ĐÃ TĂNG CHIỀU CAO
+   TRADINGVIEW CHART WIDGET - CHIỀU CAO 650px
    ========================================= */
 .tradingview-widget-container {
     position: relative;
     width: 100%;
-    height: 1400px; /* Tăng từ 450px lên 600px để chart cao, to như GoldTrap */
+    height: 650px; /* Khớp với "height": "650" trong script index.html */
     border-radius: 15px;
     overflow: hidden;
     border: 1px solid #333;
