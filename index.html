@@ -6,19 +6,6 @@
     <title>GoldHunter EA - Automated MT4/MT5 Trading</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    
-    <!-- Google Translate - Dùng HTTPS tuyệt đối để tương thích GitHub Pages -->
-    <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'vi',
-        includedLanguages: 'en,ms,id,zh-CN,zh-TW,vi,th,ko,ja,tl,hi,es,pt,ru,fr,de,mn,kk,uz,en-ZA',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
-    </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
 
@@ -41,9 +28,39 @@
             <a href="#tai-xuong">Tài xuống</a>
             <a href="#cau-hoi">Câu hỏi</a>
         </nav>
-        
-        <!-- GOOGLE TRANSLATE CONTAINER -->
-        <div id="google_translate_element" class="lang-selector"></div>
+
+        <!-- =============================================
+             LANGUAGE SELECTOR (Tùy chỉnh - Hoạt động 100%)
+             ============================================= -->
+        <div class="lang-selector" id="langSelector">
+            <button class="lang-btn" id="langBtn">
+                <span class="globe-icon">🌐</span>
+                <span id="currentLang">Tiếng Việt</span>
+                <span class="arrow">▼</span>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+                <a href="#" data-lang="vi">Tiếng Việt <span class="check">✓</span></a>
+                <a href="#" data-lang="en">English</a>
+                <a href="#" data-lang="ms">Bahasa Melayu</a>
+                <a href="#" data-lang="id">Bahasa Indonesia</a>
+                <a href="#" data-lang="zh-CN">简体中文</a>
+                <a href="#" data-lang="zh-TW">繁體中文</a>
+                <a href="#" data-lang="th">ไทย</a>
+                <a href="#" data-lang="ko">한국어</a>
+                <a href="#" data-lang="ja">日本語</a>
+                <a href="#" data-lang="tl">Filipino</a>
+                <a href="#" data-lang="hi">हिन्दी</a>
+                <a href="#" data-lang="es">Español</a>
+                <a href="#" data-lang="pt">Português (Brasil)</a>
+                <a href="#" data-lang="ru">Русский</a>
+                <a href="#" data-lang="fr">Français</a>
+                <a href="#" data-lang="de">Deutsch</a>
+                <a href="#" data-lang="mn">Монгол</a>
+                <a href="#" data-lang="kk">Қазақша</a>
+                <a href="#" data-lang="uz">O'zbekcha</a>
+                <a href="#" data-lang="en-ZA">English (South Africa)</a>
+            </div>
+        </div>
     </header>
 
     <!-- HERO SECTION -->
@@ -213,6 +230,21 @@
     <div class="chat-widget">
         <img src="https://via.placeholder.com/50" alt="Support">
     </div>
+
+    <!-- =============================================
+         GOOGLE TRANSLATE (ẨN - CHỈ DÙNG ĐỂ DỊCH NGẦM)
+         ============================================= -->
+    <div id="google_translate_element" style="position:absolute; left:-9999px; top:-9999px;"></div>
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'vi',
+        includedLanguages: 'en,ms,id,zh-CN,zh-TW,vi,th,ko,ja,tl,hi,es,pt,ru,fr,de,mn,kk,uz,en-ZA',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script src="script.js"></script>
 </body>
