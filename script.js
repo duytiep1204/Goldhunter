@@ -50,7 +50,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// 4.3. Tên hiển thị của các ngôn ngữ
+// 4.3. Tên hiển thị
 const langNames = {
     'vi': 'Tiếng Việt',
     'en': 'English',
@@ -74,32 +74,44 @@ const langNames = {
     'en-ZA': 'English (South Africa)'
 };
 
-// 4.4. Hàm đổi ngôn ngữ - Dùng cookie googtrans
-function changeLanguage(langCode) {
+// 4.4. Hàm xóa cookie googtrans
+function clearGoogleTranslateCookies() {
+    const expire = 'expires=Thu, 01 Jan 1970 00:00:00 UTC';
     const hostname = window.location.hostname;
+    const paths = ['/', '/vi/', window.location.pathname];
+    
+    // Xóa ở nhiều path và domain khác nhau để chắc chắn
+    document.cookie = `googtrans=; ${expire}; path=/;`;
+    document.cookie = `googtrans=; ${expire}; path=/; domain=${hostname};`;
+    document.cookie = `googtrans=; ${expire}; path=/; domain=.${hostname};`;
+    document.cookie = `googtrans=; ${expire}; path=${window.location.pathname};`;
+}
+
+// 4.5. Hàm đổi ngôn ngữ
+function changeLanguage(langCode) {
+    // Xóa cookie cũ trước
+    clearGoogleTranslateCookies();
     
     if (langCode === 'vi') {
-        // Xóa tất cả cookie googtrans để về tiếng Việt
-        const expire = 'expires=Thu, 01 Jan 1970 00:00:00 UTC';
-        document.cookie = `googtrans=; ${expire}; path=/;`;
-        document.cookie = `googtrans=; ${expire}; path=/; domain=${hostname};`;
-        document.cookie = `googtrans=; ${expire}; path=/; domain=.${hostname};`;
+        // Về tiếng Việt: chỉ cần xóa cookie và reload
         window.location.reload();
         return;
     }
     
-    // Ghi cookie googtrans với đầy đủ các domain để chắc chắn hoạt động
+    // Ghi cookie googtrans mới
+    const hostname = window.location.hostname;
     document.cookie = `googtrans=/vi/${langCode}; path=/;`;
     if (hostname && hostname !== 'localhost' && hostname !== '127.0.0.1') {
         document.cookie = `googtrans=/vi/${langCode}; path=/; domain=${hostname};`;
-        document.cookie = `googtrans=/vi/${langCode}; path=/; domain=.${hostname};`;
     }
     
-    // Reload trang để Google Translate dịch
-    window.location.reload();
+    // Đợi 100ms cho cookie được ghi, sau đó reload
+    setTimeout(() => {
+        window.location.reload();
+    }, 100);
 }
 
-// 4.5. Xử lý khi chọn ngôn ngữ
+// 4.6. Xử lý khi chọn ngôn ngữ
 langLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -131,7 +143,7 @@ langLinks.forEach(link => {
 });
 
 /* =========================================
-   5. ĐỌC NGÔN NGỮ HIỆN TẠI TỪ COOKIE KHI LOAD TRANG
+   5. ĐỌC NGÔN NGỮ HIỆN TẠI TỪ COOKIE KHI LOAD
    ========================================= */
 window.addEventListener('load', function() {
     const cookies = document.cookie.split(';');
@@ -165,3 +177,20 @@ window.addEventListener('load', function() {
         }
     }
 });
+
+/* =========================================
+   6. ẨN BANNER GOOGLE TRANSLATE
+   ========================================= */
+function hideGoogleBanner() {
+    const bannerFrames = document.querySelectorAll('.goog-te-banner-frame, iframe.goog-te-banner-frame');
+    bannerFrames.forEach(frame => {
+        frame.style.display = 'none';
+        frame.style.visibility = 'hidden';
+    });
+    document.body.style.top = '0px';
+    document.body.style.position = 'static';
+    document.body.style.marginTop = '0px';
+}
+setInterval(hideGoogleBanner, 500);
+window.addEventListener('load', hideGoogleBanner);
+document.addEventListener('DOMContentLoaded', hideGoogleBanner);
