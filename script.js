@@ -150,7 +150,6 @@ setInterval(hideGoogleBanner, 500);
    5. MODAL THANH TOÁN
    ========================================= */
 
-// Mở modal 299
 function openBuyModal299() {
     const modal = document.getElementById('buyModal299');
     if (modal) {
@@ -166,9 +165,8 @@ function closeBuyModal299() {
     }
 }
 
-// Mở modal KHÔNG GIỚI HẠN
 function openBuyModalUnlimited() {
-    // Cập nhật giá mới nhất vào modal
+    // Đồng bộ giá mới nhất vào modal
     const modalPrice = document.getElementById('modalUnlimitedPrice');
     const displayPrice = document.getElementById('unlimitedPrice');
     if (modalPrice && displayPrice) {
@@ -189,7 +187,6 @@ function closeBuyModalUnlimited() {
     }
 }
 
-// Copy địa chỉ ví
 function copyWallet(event) {
     const address = '0xcff897402f6b952ee41ea13f41d9081970df2893';
     const btn = event.currentTarget;
@@ -220,7 +217,6 @@ function copyWallet(event) {
     });
 }
 
-// Đóng modal khi click ra ngoài
 document.addEventListener('click', (e) => {
     ['buyModal299', 'buyModalUnlimited', 'existingModal'].forEach(id => {
         const modal = document.getElementById(id);
@@ -231,7 +227,6 @@ document.addEventListener('click', (e) => {
     });
 });
 
-// Đóng modal khi ESC
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         ['buyModal299', 'buyModalUnlimited', 'existingModal'].forEach(id => {
@@ -244,27 +239,22 @@ document.addEventListener('keydown', (e) => {
 
 /* =========================================
    6. ĐỒNG HỒ ĐẾM NGƯỢC - GIÁ TĂNG 5 USDT MỖI 24H
+   ĐÃ FIX: TẤT CẢ NGƯỜI DÙNG THẤY CÙNG GIÁ
    ========================================= */
 
-// Cấu hình: giá khởi điểm và giá tăng mỗi 24h
+// Cấu hình giá
 const PRICE_CONFIG = {
-    startPrice: 899,          // Giá khởi điểm
-    incrementPerDay: 5,       // Tăng 5 USDT mỗi 24h
-    startTimestamp: null      // Sẽ được khởi tạo lần đầu
+    startPrice: 899,           // Giá khởi điểm ban đầu (USDT)
+    incrementPerDay: 5,        // Tăng 5 USDT mỗi 24h
+    // ⚠️ MỐC THỜI GIAN CỐ ĐỊNH - đổi ngày này nếu muốn reset giá
+    // Format: YYYY-MM-DDTHH:mm:ss+07:00 (giờ Việt Nam)
+    fixedStartDate: '2026-09-26T00:00:00+07:00'
 };
 
-// Hàm lấy hoặc khởi tạo timestamp gốc
+// Hàm lấy timestamp gốc - LUÔN CỐ ĐỊNH, không dùng localStorage
+// → Tất cả người dùng trên thế giới đều tính từ cùng một mốc
 function getStartTimestamp() {
-    const STORAGE_KEY = 'goldhunter_price_start';
-    let stored = localStorage.getItem(STORAGE_KEY);
-    
-    if (!stored) {
-        // Lần đầu truy cập: lưu timestamp hiện tại
-        const now = Date.now();
-        localStorage.setItem(STORAGE_KEY, now.toString());
-        return now;
-    }
-    return parseInt(stored, 10);
+    return new Date(PRICE_CONFIG.fixedStartDate).getTime();
 }
 
 // Hàm tính giá hiện tại dựa trên thời gian đã trôi qua
@@ -296,7 +286,7 @@ function calculateTimeToNextPrice() {
 
 // Hàm cập nhật giá và đồng hồ
 function updatePriceAndCountdown() {
-    // Cập nhật giá
+    // Cập nhật giá ở 3 nơi
     const currentPrice = calculateCurrentPrice();
     const priceEl = document.getElementById('unlimitedPrice');
     const priceBtnEl = document.getElementById('unlimitedPriceBtn');
@@ -327,7 +317,6 @@ if (document.getElementById('countdownTimer')) {
    7. HÀM CHO TRANG FREE ACCESS
    ========================================= */
 
-// Copy mã giới thiệu
 function copyRefCode(event) {
     const code = 'UN60VTqp';
     navigator.clipboard.writeText(code).then(() => {
@@ -344,7 +333,6 @@ function copyRefCode(event) {
     }).catch(() => alert('Mã giới thiệu: ' + code));
 }
 
-// Mở/đóng modal đã có tài khoản
 function openExistingModal() {
     document.getElementById('existingModal').classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -354,7 +342,6 @@ function closeExistingModal() {
     document.body.style.overflow = '';
 }
 
-// Copy text đơn giản
 function copyText(text, event) {
     navigator.clipboard.writeText(text).then(() => {
         const btn = event.target;
@@ -368,7 +355,6 @@ function copyText(text, event) {
     }).catch(() => alert('Nội dung: ' + text));
 }
 
-// Copy body email
 function copyBody(event) {
     const userName = document.getElementById('userNameInput')?.value || '(Your Name)';
     const userEmail = document.getElementById('userEmailInput')?.value || '[Your Email]';
