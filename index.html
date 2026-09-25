@@ -182,7 +182,7 @@
                 <a href="free-access.html" class="btn-free-access">Truy Cập Miễn Phí →</a>
             </div>
 
-            <!-- CARD 2: 5 TÀI KHOẢN -->
+            <!-- CARD 2: 5 TÀI KHOẢN $299 -->
             <div class="price-card popular">
                 <p class="plan-type">
                     <span class="icon-fire">🔥</span> PHỔ BIẾN NHẤT
@@ -197,16 +197,16 @@
                     <li>✓ Miễn phí nâng cấp tất cả phiên bản tương lai</li>
                     <li>✓ Ưu tiên trả lời tin nhắn</li>
                 </ul>
-                <button class="btn-primary full-width">🛒 Mua Ngay - $299 USDT</button>
+                <button class="btn-primary full-width" onclick="openBuyModal299()">🛒 Mua Ngay - $299 USDT</button>
             </div>
 
-            <!-- CARD 3: KHÔNG GIỚI HẠN -->
+            <!-- CARD 3: KHÔNG GIỚI HẠN - GIÁ ĐỘNG -->
             <div class="price-card">
                 <p class="plan-type">
                     <span class="icon-crown">👑</span> KHÔNG GIỚI HẠN
                 </p>
                 <h3>Không giới hạn</h3>
-                <div class="price">$885 <span>USDT</span> <span class="hot-badge">🔥 HOT</span></div>
+                <div class="price">$<span id="unlimitedPrice">899</span> <span>USDT</span> <span class="hot-badge">🔥 HOT</span></div>
                 <p class="subtitle">Dành cho nhà giao dịch quản lý nhiều tài khoản</p>
                 <ul>
                     <li>✓ Bản quyền trọn đời</li>
@@ -217,13 +217,13 @@
                 </ul>
                 <div class="countdown-box">
                     <p class="countdown-label">UNLIMITED — NEW PRICE IN</p>
-                    <div class="countdown">
-                        <span class="time-block"><strong>15</strong><small>h</small></span>
-                        <span class="time-block"><strong>25</strong><small>m</small></span>
-                        <span class="time-block"><strong>53</strong><small>s</small></span>
+                    <div class="countdown" id="countdownTimer">
+                        <span class="time-block"><strong id="cd-hours">15</strong><small>h</small></span>
+                        <span class="time-block"><strong id="cd-minutes">25</strong><small>m</small></span>
+                        <span class="time-block"><strong id="cd-seconds">53</strong><small>s</small></span>
                     </div>
                 </div>
-                <button class="btn-primary full-width">🛒 Mua Ngay - $885 USDT</button>
+                <button class="btn-primary full-width" onclick="openBuyModalUnlimited()">🛒 Mua Ngay - $<span id="unlimitedPriceBtn">899</span> USDT</button>
             </div>
         </div>
     </section>
@@ -239,14 +239,14 @@
             <div class="download-card">
                 <div class="download-icon">⬇</div>
                 <h3>MetaTrader 5</h3>
-                <p class="file-name">GoldHunter_v1.0.ex5</p>
+                <p class="file-name">GoldHunter_v4_2_3.ex5</p>
                 <p class="req">🔑 Yêu cầu khóa giấy phép khi chạy</p>
                 <button class="btn-primary full-width">⬇ Tải xuống</button>
             </div>
             <div class="download-card">
                 <div class="download-icon">⬇</div>
                 <h3>MetaTrader 4</h3>
-                <p class="file-name">GoldHunter_v1.0.ex4</p>
+                <p class="file-name">GoldHunter_v4_2_3.ex4</p>
                 <p class="req">🔑 Yêu cầu khóa giấy phép khi chạy</p>
                 <button class="btn-secondary full-width">⬇ Tải xuống</button>
             </div>
@@ -278,6 +278,88 @@
     <!-- NÚT CHAT -->
     <div class="chat-widget">
         <img src="https://placehold.co/100x100/ffd700/000?text=Chat" alt="Support">
+    </div>
+
+    <!-- =============================================
+         MODAL MUA 299 USDT
+         ============================================= -->
+    <div class="modal-overlay" id="buyModal299">
+        <div class="modal-box buy-modal-box">
+            <button class="modal-close" onclick="closeBuyModal299()">✕</button>
+
+            <h2>Mua GOLDHUNTER EA v1.0</h2>
+            <p class="buy-subtitle">Gửi USDT và xác nhận trên Telegram.</p>
+
+            <div class="buy-row">
+                <span class="buy-label">Gói</span>
+                <span class="buy-value gold">5 tài khoản</span>
+            </div>
+
+            <div class="buy-row">
+                <span class="buy-label">Số tiền</span>
+                <span class="buy-value gold"><strong>299</strong> USDT</span>
+            </div>
+
+            <div class="buy-row">
+                <span class="buy-label">Mạng lưới</span>
+                <span class="buy-value gold">BNB Smart Chain (BEP20)</span>
+            </div>
+
+            <div class="wallet-box">
+                <div class="wallet-header">
+                    <span class="wallet-tag">ĐỊA CHỈ VÍ</span>
+                    <button class="btn-copy-icon" onclick="copyWallet(event)" title="Sao chép">📋</button>
+                </div>
+                <p class="wallet-address">0xcff897402f6b952ee41ea13f41d9081970df2893</p>
+            </div>
+
+            <p class="buy-note">Sau khi thanh toán, gửi ảnh chụp giao dịch cho GoldHunter trên Telegram để kích hoạt bản quyền.</p>
+
+            <a href="https://t.me/+84378535155" target="_blank" class="btn-telegram">
+                ✈️ Xác Nhận Thanh Toán Trên Telegram
+            </a>
+        </div>
+    </div>
+
+    <!-- =============================================
+         MODAL MUA KHÔNG GIỚI HẠN (giá động)
+         ============================================= -->
+    <div class="modal-overlay" id="buyModalUnlimited">
+        <div class="modal-box buy-modal-box">
+            <button class="modal-close" onclick="closeBuyModalUnlimited()">✕</button>
+
+            <h2>Mua GOLDHUNTER EA v1.0</h2>
+            <p class="buy-subtitle">Gửi USDT và xác nhận trên Telegram.</p>
+
+            <div class="buy-row">
+                <span class="buy-label">Gói</span>
+                <span class="buy-value gold">Không giới hạn</span>
+            </div>
+
+            <div class="buy-row">
+                <span class="buy-label">Số tiền</span>
+                <span class="buy-value gold"><strong id="modalUnlimitedPrice">899</strong> USDT</span>
+            </div>
+
+            <div class="buy-row">
+                <span class="buy-label">Mạng lưới</span>
+                <span class="buy-value gold">BNB Smart Chain (BEP20)</span>
+            </div>
+
+            <div class="wallet-box">
+                <div class="wallet-header">
+                    <span class="wallet-tag">ĐỊA CHỈ VÍ</span>
+                    <button class="btn-copy-icon" onclick="copyWallet(event)" title="Sao chép">📋</button>
+                </div>
+                <p class="wallet-address">0xcff897402f6b952ee41ea13f41d9081970df2893</p>
+            </div>
+
+            <p class="buy-note">Sau khi thanh toán, gửi ảnh chụp giao dịch cho GoldHunter trên Telegram để kích hoạt bản quyền.</p>
+
+            <a href="https://t.me/+84378535155" target="_blank" class="btn-telegram">
+                ✈️ Xác Nhận Thanh Toán Trên Telegram
+            </a>
+        </div>
     </div>
 
     <!-- GOOGLE TRANSLATE CHẠY NGẦM -->
