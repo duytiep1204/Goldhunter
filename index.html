@@ -248,20 +248,241 @@
         </div>
     </section>
 
-    <!-- FAQ -->
+        <!-- FAQ -->
     <section class="faq" id="cau-hoi">
+        <p class="section-label" style="text-align: center;">FAQ</p>
         <h2>Câu Hỏi Thường Gặp</h2>
+        <p class="faq-subtitle">Mọi điều bạn cần biết về GoldHunter EA.</p>
+
+        <!-- TABS -->
         <div class="faq-tabs">
-            <button class="active">Cơ bản</button>
-            <button>Tài khoản & Sàn</button>
-            <button>Vốn & Rủi ro</button>
-            <button>Cài đặt & Trợ giúp</button>
+            <button class="active" data-tab="co-ban">Cơ bản</button>
+            <button data-tab="tai-khoan">Tài khoản & Sàn</button>
+            <button data-tab="von-rui-ro">Vốn & Rủi ro</button>
+            <button data-tab="cai-dat">Cài đặt & Trợ giúp</button>
         </div>
-        <div class="faq-list">
-            <div class="faq-item">GoldHunter EA là gì? <span>+</span></div>
-            <div class="faq-item">GoldHunter EA dành cho ai? <span>+</span></div>
-            <div class="faq-item">GoldHunter EA có thể dùng trên MT5 không? <span>+</span></div>
-            <div class="faq-item">Tôi có thể chạy GoldHunter EA trên điện thoại không? <span>+</span></div>
+
+        <!-- =============================================
+             TAB 1: CƠ BẢN
+             ============================================= -->
+        <div class="faq-content active" id="co-ban">
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">GoldHunter EA là gì?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>GoldHunter EA là một Expert Advisor cho MetaTrader 5, được xây dựng riêng cho giao dịch XAUUSD (Vàng). Nó sử dụng chiến lược straddle entry và kiểm soát rủi ro chặt chẽ để quản lý các lệnh tự động theo các thiết lập bạn đã cấu hình.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">GoldHunter EA giao dịch cặp nào?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Trọng tâm chính và việc tối ưu logic của GoldHunter là dành riêng cho thị trường XAUUSD (Vàng).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">GoldHunter EA dành cho ai?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>GoldHunter EA phù hợp với những trader hiểu rõ rủi ro của giao dịch tự động và sẵn sàng tuân theo thiết lập tiêu chuẩn đúng (lựa chọn broker, loại tài khoản, leverage, lot size, sử dụng VPS và các thiết lập rủi ro). Nó không dành cho người dùng kỳ vọng lợi nhuận cố định mà không sẵn sàng đối mặt với floating loss hay drawdown.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Tôi có thể chạy GoldHunter EA trên điện thoại không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Không. Điện thoại chỉ dùng để theo dõi hoạt động giao dịch qua ứng dụng MetaTrader di động. Tập tin EA phải chạy bên trong terminal desktop MT5 được cài đặt trên PC/laptop Windows hoặc trên VPS.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">GoldHunter EA sử dụng chiến lược gì?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>GoldHunter EA sử dụng hệ thống pending order kiểu straddle quanh mức giá thị trường hiện tại.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =============================================
+             TAB 2: TÀI KHOẢN & SÀN
+             ============================================= -->
+        <div class="faq-content" id="tai-khoan">
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Tôi có thể dùng những Broker nào?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>GoldHunter EA có thể hoạt động trên bất kỳ broker MT5 nào cung cấp symbol, spread, leverage, chất lượng khớp lệnh và loại tài khoản phù hợp. Đối với chương trình Free Access, tài khoản giao dịch trước tiên phải được đăng ký dưới mạng lưới IB (Introducing Broker) mà chúng tôi hỗ trợ và được xác minh.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Sự khác biệt giữa Direct License và Free Access là gì?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Direct License cho người dùng toàn quyền linh hoạt sử dụng bất kỳ broker nào theo lựa chọn của mình mà không bị ràng buộc điều kiện khối lượng. Free Access là một chương trình không có phí license hằng tháng, nhưng việc kích hoạt license phụ thuộc hoàn toàn vào việc xác minh trạng thái tài khoản dưới mạng lưới broker IB mà chúng tôi hỗ trợ.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Tôi có thể dùng tài khoản Standard không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Có, tài khoản Standard có thể được sử dụng. Tuy nhiên, nó đòi hỏi vốn lớn hơn nhiều, lot size tối thiểu lớn hơn và các thiết lập rủi ro thận trọng hơn. Floating loss trên tài khoản Standard lớn hơn nhiều so với tài khoản Cent nếu thiết lập lot quá hung hãn.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Tôi đã có tài khoản Broker. Tôi có thể dùng nó không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Vui lòng kiểm tra với bộ phận support trước. Đối với gói đăng ký Direct License, một tài khoản broker hiện có có thể được xem xét nếu các thông số kỹ thuật của nó đáp ứng yêu cầu kỹ thuật của EA. Đối với chương trình Free Access, tài khoản phải nằm trong mạng lưới IB của chúng tôi; nếu không, bạn sẽ cần thực hiện chuyển IB hoặc mở tài khoản mới.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Tôi có thể dùng tài khoản Cent không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Có, tài khoản Cent được khuyến nghị cao khi broker, loại leverage, spread, symbol suffix và set file được sử dụng đều khớp nhau. Tài khoản Cent thường được dùng cho các phiên kiểm thử live với vốn thực nhỏ hơn, nhưng các nguyên tắc quản lý rủi ro vẫn được áp dụng.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =============================================
+             TAB 3: VỐN & RỦI RO
+             ============================================= -->
+        <div class="faq-content" id="von-rui-ro">
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Bạn khuyến nghị mức vốn bao nhiêu?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Mặc dù về mặt kỹ thuật GoldHunter EA có thể chạy trên tài khoản Cent với mức thấp tới 10,000 USC, hầu hết người dùng của chúng tôi chọn 50,000 USC trở lên để có trải nghiệm giao dịch cân bằng và thoải mái hơn. Trong các thử nghiệm forward trực tiếp gần đây, mức vốn 100,000 USC đã mang lại sự linh hoạt về ký quỹ và độ ổn định mạnh nhất trong điều kiện thị trường thay đổi và khó lường. Theo nguyên tắc chung, vốn càng được tối ưu thì khả năng vốn có của tài khoản trong việc chịu đựng biến động thị trường theo thời gian càng tốt. Hãy chọn quy mô vốn phù hợp với mục tiêu tài chính và vùng thoải mái rủi ro của bạn.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">GoldHunter EA có đảm bảo lợi nhuận không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Không. Không có hệ thống giao dịch hay EA nào có thể đảm bảo lợi nhuận cố định hoặc đầu tư không rủi ro. GoldHunter EA vẫn chịu rủi ro floating loss, drawdown, margin call, stop out và mất toàn bộ vốn, đặc biệt khi thị trường di chuyển mạnh theo một hướng mà không có đủ retracement giá.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Tôi có thể giao dịch trong lúc có tin không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Các tin tức tác động mạnh như NFP, CPI, FOMC và các sự kiện lớn khác của Vàng có thể gây ra spread giãn rộng, slippage và các biến động thị trường cực nhanh trong thời gian ngắn. Người dùng được khuyến nghị mạnh mẽ giảm rủi ro tài khoản bằng cách đóng pending order hoặc dừng các chu kỳ vào lệnh mới một cách thủ công trước khi tin tức lớn được công bố, để tránh các cú sốc thị trường quá biến động.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Lot size bao nhiêu là phù hợp?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Lot size phải được tính toán và quyết định dựa trên tổng vốn, equity, leverage, loại tài khoản, spread và preset đã nạp. Đừng bao giờ chọn lot size chỉ dựa trên mục tiêu lợi nhuận; lot size phải dựa trên khả năng của tài khoản trong việc chịu đựng tác động của biến động floating và drawdown của thị trường. Mức khởi đầu mặc định là 0.01.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Rủi ro chính của GoldHunter EA là gì?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Rủi ro chính là floating drawdown tăng lên trong khi giai đoạn grid recovery đang chạy. Nếu thị trường tiếp tục đẩy ngược lại hướng của basket đang hoạt động, mức phơi nhiễm margin sẽ tăng mạnh. Đó là lý do vì sao việc tuân thủ các thiết lập về tỷ lệ vốn, lot, leverage, preset, độ ổn định VPS và giới hạn rủi ro phải được lựa chọn đúng ngay từ đầu.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Tôi có thể rút lợi nhuận bất kỳ lúc nào không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Việc rút tiền được xử lý hoàn toàn qua hệ thống của broker, không phải qua các chức năng của EA. Tuy nhiên, bạn phải đảm bảo free margin vẫn đủ sau khi việc rút tiền hoàn tất. Tránh rút những khoản rất lớn khi tài khoản đang có các basket floating hoạt động, vì điều đó có thể làm tăng vọt rủi ro margin call hoặc stop out đột ngột.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =============================================
+             TAB 4: CÀI ĐẶT & TRỢ GIÚP
+             ============================================= -->
+        <div class="faq-content" id="cai-dat">
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Tôi có cần VPS không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Một Virtual Private Server (VPS) được khuyến nghị mạnh mẽ cho live trading. EA cần terminal MetaTrader online 24/5 để mở, quản lý và đóng các vị thế. Nếu PC hoặc laptop của bạn tắt, ở chế độ sleep, đang khởi động lại hoặc mất internet, EA sẽ không thể hoạt động để quản lý các lệnh của bạn.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Nếu tôi đăng ký để nhận EA, có dịch vụ cài đặt không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Dịch vụ cài đặt không được cung cấp theo mặc định. Người dùng phải tự cài đặt. Bộ phận support sẵn sàng hỗ trợ kiểm tra thông tin cơ bản hoặc xem lại error log trong tab Experts/Journal nếu bạn gặp vấn đề kỹ thuật, nhưng người dùng tuyệt đối không được chia sẻ mật khẩu tài khoản giao dịch (master password) của mình với bất kỳ ai.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q-text">Tại sao EA không vào lệnh?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Các nguyên nhân thường gặp bao gồm trạng thái license không hợp lệ/hết hạn, tên miền URL WebRequest chưa được cho phép trong cài đặt, nút Algo Trading/AutoTrading đang tắt trên terminal, phiên thị trường đã đóng, spread hiện tại vượt quá giới hạn tối đa, symbol suffix sai trên broker, cửa sổ giao dịch chưa bắt đầu, free margin không đủ, hoặc set file không khớp với thông số kỹ thuật của tài khoản.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NÚT XEM TẤT CẢ CÂU HỎI -->
+        <div class="faq-see-all">
+            <a href="#" class="btn-see-all">Xem tất cả câu hỏi ↗</a>
         </div>
     </section>
 
