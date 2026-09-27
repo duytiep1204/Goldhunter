@@ -9,20 +9,46 @@ if (closeBannerBtn) {
 }
 
 /* =========================================
-   2. FAQ
+   2. FAQ - TABS & ACCORDION
    ========================================= */
-document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('click', () => {
-        const span = item.querySelector('span');
-        span.textContent = span.textContent === '+' ? '−' : '+';
+
+// Xử lý chuyển tab
+document.querySelectorAll('.faq-tabs button').forEach(button => {
+    button.addEventListener('click', () => {
+        // Bỏ active ở tất cả các nút tab
+        document.querySelectorAll('.faq-tabs button').forEach(btn => btn.classList.remove('active'));
+        // Bỏ active ở tất cả các nội dung tab
+        document.querySelectorAll('.faq-content').forEach(content => content.classList.remove('active'));
+
+        // Thêm active cho nút vừa bấm
+        button.classList.add('active');
+        // Hiện nội dung tab tương ứng
+        const tabId = button.getAttribute('data-tab');
+        const tabContent = document.getElementById(tabId);
+        if (tabContent) {
+            tabContent.classList.add('active');
+        }
     });
 });
 
-document.querySelectorAll('.faq-tabs button').forEach(button => {
-    button.addEventListener('click', () => {
-        document.querySelectorAll('.faq-tabs button').forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-    });
+// Xử lý mở/đóng câu hỏi (accordion)
+document.querySelectorAll('.faq-item').forEach(item => {
+    const question = item.querySelector('.faq-question');
+    if (question) {
+        question.addEventListener('click', () => {
+            // Đóng tất cả các câu hỏi khác (chỉ mở 1 câu tại 1 thời điểm)
+            const parentList = item.closest('.faq-list');
+            if (parentList) {
+                parentList.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('open');
+                    }
+                });
+            }
+            // Toggle câu hỏi hiện tại
+            item.classList.toggle('open');
+        });
+    }
 });
 
 /* =========================================
