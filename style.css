@@ -21,7 +21,9 @@ body {
     position: static !important;
 }
 
-/* ẨN GOOGLE TRANSLATE */
+/* =========================================
+   ẨN GOOGLE TRANSLATE
+   ========================================= */
 .goog-te-banner-frame,
 iframe.goog-te-banner-frame {
     display: none !important;
@@ -37,7 +39,9 @@ iframe.goog-te-banner-frame {
 }
 .goog-logo-link { display: none !important; }
 
-/* THANH THÔNG BÁO */
+/* =========================================
+   THANH THÔNG BÁO
+   ========================================= */
 .top-banner {
     background-color: #1a1a1a;
     color: #ffd700;
@@ -59,7 +63,9 @@ iframe.goog-te-banner-frame {
     font-size: 16px;
 }
 
-/* HEADER */
+/* =========================================
+   HEADER
+   ========================================= */
 header {
     display: flex;
     justify-content: space-between;
@@ -102,7 +108,9 @@ nav a {
 
 nav a:hover { color: #ffd700; }
 
-/* DROPDOWN NGÔN NGỮ */
+/* =========================================
+   DROPDOWN NGÔN NGỮ
+   ========================================= */
 .lang-selector { position: relative; user-select: none; }
 
 .lang-btn {
@@ -164,7 +172,9 @@ nav a:hover { color: #ffd700; }
 .lang-dropdown a.active { background-color: #2a2308; color: #ffd700; font-weight: 700; }
 .lang-dropdown a .check { color: #ffd700; font-weight: bold; font-size: 14px; }
 
-/* HERO */
+/* =========================================
+   HERO
+   ========================================= */
 .hero {
     display: flex;
     padding: 80px 50px;
@@ -240,7 +250,9 @@ nav a:hover { color: #ffd700; }
     max-width: 100%;
 }
 
-/* TRADINGVIEW */
+/* =========================================
+   TRADINGVIEW
+   ========================================= */
 .tradingview-widget-container {
     position: relative;
     width: 100%;
@@ -254,7 +266,9 @@ nav a:hover { color: #ffd700; }
 .tradingview-widget-container__widget { width: 100%; height: 100%; }
 .tradingview-widget-container iframe { border-radius: 15px; }
 
-/* FEATURES */
+/* =========================================
+   FEATURES
+   ========================================= */
 .features { padding: 80px 50px; max-width: 1400px; margin: 0 auto; }
 
 .section-label {
@@ -265,7 +279,7 @@ nav a:hover { color: #ffd700; }
     margin-bottom: 10px;
 }
 
-.features h2, .how-it-works h2, .pricing h2, .faq h2, .download h2 {
+.features h2, .how-it-works h2, .pricing h2, .download h2 {
     font-size: 36px;
     font-weight: 800;
     margin-bottom: 40px;
@@ -286,7 +300,9 @@ nav a:hover { color: #ffd700; }
 
 .feature-item::before { content: "✓"; color: #ffd700; font-weight: bold; }
 
-/* HOW IT WORKS */
+/* =========================================
+   HOW IT WORKS
+   ========================================= */
 .how-it-works { padding: 80px 50px; max-width: 1400px; margin: 0 auto; }
 .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 
@@ -313,7 +329,9 @@ nav a:hover { color: #ffd700; }
 .step-card h3 { margin-bottom: 10px; }
 .step-card p { color: #aaa; font-size: 14px; }
 
-/* PRICING */
+/* =========================================
+   PRICING
+   ========================================= */
 .pricing {
     padding: 80px 50px;
     max-width: 1400px;
@@ -362,7 +380,6 @@ nav a:hover { color: #ffd700; }
 
 .price-card h3 { font-size: 24px; margin-bottom: 10px; }
 
-/* GIÁ - số vàng, to */
 .price {
     font-size: 48px;
     font-weight: 800;
@@ -505,9 +522,19 @@ nav a:hover { color: #ffd700; }
 .time-block small { font-size: 11px; color: #888; }
 .full-width { width: 100%; }
 
-/* DOWNLOAD */
+/* =========================================
+   DOWNLOAD
+   ========================================= */
 .download { padding: 80px 50px; max-width: 1400px; margin: 0 auto; }
-.download-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 30px; max-width: 500px; margin-left: auto; margin-right: auto; }
+.download-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .download-card {
     background: #111;
@@ -543,7 +570,6 @@ nav a:hover { color: #ffd700; }
     margin-bottom: 20px;
 }
 
-/* Nút tải xuống (thẻ <a>) */
 .download-card a.btn-primary,
 .download-card a.btn-secondary {
     display: flex;
@@ -555,49 +581,185 @@ nav a:hover { color: #ffd700; }
     box-sizing: border-box;
 }
 
-/* FAQ */
-.faq { padding: 80px 50px; max-width: 1400px; margin: 0 auto; text-align: center; }
+/* =========================================
+   FAQ - CÂU HỎI THƯỜNG GẶP (MỚI)
+   ========================================= */
+.faq {
+    padding: 80px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
 
+.faq h2 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.faq-subtitle {
+    color: #888;
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+/* Tabs */
 .faq-tabs {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 40px;
     flex-wrap: wrap;
 }
 
 .faq-tabs button {
     background: #111;
-    border: 1px solid #333;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 20px;
+    border: 1px solid #2a2a2a;
+    color: #ccc;
+    padding: 12px 24px;
+    border-radius: 30px;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s;
 }
 
-.faq-tabs button.active { background: #ffd700; color: #000; border-color: #ffd700; }
+.faq-tabs button:hover {
+    border-color: #ffd700;
+    color: #ffd700;
+}
 
+.faq-tabs button.active {
+    background: #ffd700;
+    color: #000;
+    border-color: #ffd700;
+    font-weight: 700;
+}
+
+/* Nội dung tab */
+.faq-content {
+    display: none;
+    animation: faqFadeIn 0.3s ease-out;
+}
+
+.faq-content.active {
+    display: block;
+}
+
+@keyframes faqFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Danh sách FAQ - 2 cột */
 .faq-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     text-align: left;
+    align-items: start;
 }
 
+/* Từng câu hỏi */
 .faq-item {
-    background: #111;
-    padding: 20px;
-    border-radius: 10px;
+    background: #0d0d0d;
     border: 1px solid #222;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.faq-item:hover {
+    border-color: #333;
+}
+
+.faq-item.open {
+    border-color: #ffd700;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.08);
+}
+
+/* Câu hỏi */
+.faq-question {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 22px 26px;
     cursor: pointer;
+    gap: 16px;
+    user-select: none;
 }
 
-.faq-item span { color: #ffd700; font-size: 20px; }
+.faq-q-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.4;
+}
 
-/* FOOTER */
+.faq-icon {
+    color: #ffd700;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.faq-item.open .faq-icon {
+    transform: rotate(180deg);
+}
+
+/* Câu trả lời */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 26px;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 800px;
+    padding: 0 26px 24px;
+}
+
+.faq-answer p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Nút Xem tất cả */
+.faq-see-all {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-see-all {
+    display: inline-block;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #ffd700;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-see-all:hover {
+    background: #ffd700;
+    color: #000;
+    border-color: #ffd700;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
 footer {
     padding: 40px 50px;
     text-align: center;
@@ -608,7 +770,9 @@ footer {
     margin: 0 auto;
 }
 
-/* CHAT WIDGET */
+/* =========================================
+   CHAT WIDGET
+   ========================================= */
 .chat-widget {
     position: fixed;
     bottom: 20px;
@@ -625,7 +789,9 @@ footer {
 
 .chat-widget img { width: 100%; height: 100%; object-fit: cover; }
 
-/* TRANG FREE ACCESS */
+/* =========================================
+   TRANG FREE ACCESS
+   ========================================= */
 .free-hero {
     text-align: center;
     padding: 60px 50px 40px;
@@ -889,7 +1055,9 @@ footer {
 
 .telegram-icon { font-size: 24px; margin: 16px 0; color: #ffd700; }
 
-/* MODAL CHUNG */
+/* =========================================
+   MODAL CHUNG
+   ========================================= */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -958,7 +1126,9 @@ footer {
 .modal-desc { color: #aaa; font-size: 14px; line-height: 1.6; margin-bottom: 24px; }
 .modal-label { color: #ffd700; font-size: 14px; font-weight: 600; margin-bottom: 16px; }
 
-/* MODAL MUA */
+/* =========================================
+   MODAL MUA
+   ========================================= */
 .buy-modal-box { max-width: 520px; padding: 32px 28px 28px; }
 .buy-modal-box h2 { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
 .buy-subtitle { color: #888; font-size: 14px; margin-bottom: 24px; }
@@ -1055,7 +1225,9 @@ footer {
     box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
 }
 
-/* MODAL EMAIL */
+/* =========================================
+   MODAL EMAIL
+   ========================================= */
 .email-block {
     background: #0a0a0a;
     border: 1px solid #222;
@@ -1123,7 +1295,9 @@ footer {
 .modal-box::-webkit-scrollbar-track { background: #111; }
 .modal-box::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
 
-/* RESPONSIVE */
+/* =========================================
+   RESPONSIVE
+   ========================================= */
 @media (max-width: 1200px) {
     .hero h1 { font-size: 60px; }
 }
@@ -1133,12 +1307,26 @@ footer {
     nav a { margin: 0 8px; font-size: 13px; }
     .lang-selector { align-self: flex-end; }
     .lang-dropdown { right: 0; }
+
     .hero { flex-direction: column; padding: 40px 20px; }
     .hero h1 { font-size: 48px; }
     .hero-chart { flex: 1; width: 100%; }
-    .features, .how-it-works, .pricing, .download, .faq { padding: 50px 20px; }
-    .feature-grid, .steps-grid, .pricing-grid, .download-grid, .faq-list { grid-template-columns: 1fr; }
+
+    .features, .how-it-works, .pricing, .download { padding: 50px 20px; }
+    .feature-grid, .steps-grid, .pricing-grid, .download-grid { grid-template-columns: 1fr; }
     .tradingview-widget-container { height: 400px; }
+
+    /* FAQ Responsive */
+    .faq { padding: 50px 20px; }
+    .faq h2 { font-size: 30px; }
+    .faq-list { grid-template-columns: 1fr; }
+    .faq-tabs button { padding: 10px 16px; font-size: 13px; }
+    .faq-question { padding: 18px 20px; }
+    .faq-q-text { font-size: 14px; }
+    .faq-answer { padding: 0 20px; }
+    .faq-item.open .faq-answer { padding: 0 20px 20px; }
+
+    /* Free Access Responsive */
     .free-hero { padding: 40px 20px 30px; }
     .free-hero h1 { font-size: 36px; }
     .step-block { flex-direction: column; padding: 24px 20px; }
@@ -1146,6 +1334,8 @@ footer {
     .quick-steps { font-size: 11px; }
     .quick-step span:not(.qs-num) { display: none; }
     .quick-step.active span:not(.qs-num) { display: inline; }
+
+    /* Modal Responsive */
     .modal-box { padding: 24px 20px; }
     .modal-box h2 { font-size: 18px; }
     .buy-modal-box { padding: 24px 20px 20px; }
@@ -1157,6 +1347,8 @@ footer {
     .email-block { padding: 12px 14px; }
     .btn-copy-small { font-size: 11px; padding: 5px 10px; }
     .inline-input { min-width: 100px; font-size: 13px; }
+
+    /* Price */
     .price { font-size: 36px; }
     .price .price-number, .price #unlimitedPrice, .price #unlimitedPriceBtn { font-size: 36px !important; }
     .free-price { font-size: 36px !important; }
