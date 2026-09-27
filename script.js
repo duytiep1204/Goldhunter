@@ -166,7 +166,6 @@ function closeBuyModal299() {
 }
 
 function openBuyModalUnlimited() {
-    // Đồng bộ giá mới nhất vào modal
     const modalPrice = document.getElementById('modalUnlimitedPrice');
     const displayPrice = document.getElementById('unlimitedPrice');
     if (modalPrice && displayPrice) {
@@ -239,25 +238,18 @@ document.addEventListener('keydown', (e) => {
 
 /* =========================================
    6. ĐỒNG HỒ ĐẾM NGƯỢC - GIÁ TĂNG 5 USDT MỖI 24H
-   ĐÃ FIX: TẤT CẢ NGƯỜI DÙNG THẤY CÙNG GIÁ
    ========================================= */
 
-// Cấu hình giá
 const PRICE_CONFIG = {
-    startPrice: 899,           // Giá khởi điểm ban đầu (USDT)
-    incrementPerDay: 5,        // Tăng 5 USDT mỗi 24h
-    // ⚠️ MỐC THỜI GIAN CỐ ĐỊNH - đổi ngày này nếu muốn reset giá
-    // Format: YYYY-MM-DDTHH:mm:ss+07:00 (giờ Việt Nam)
+    startPrice: 899,
+    incrementPerDay: 5,
     fixedStartDate: '2026-09-26T00:00:00+07:00'
 };
 
-// Hàm lấy timestamp gốc - LUÔN CỐ ĐỊNH, không dùng localStorage
-// → Tất cả người dùng trên thế giới đều tính từ cùng một mốc
 function getStartTimestamp() {
     return new Date(PRICE_CONFIG.fixedStartDate).getTime();
 }
 
-// Hàm tính giá hiện tại dựa trên thời gian đã trôi qua
 function calculateCurrentPrice() {
     const startTime = getStartTimestamp();
     const now = Date.now();
@@ -268,7 +260,6 @@ function calculateCurrentPrice() {
     return currentPrice;
 }
 
-// Hàm tính thời gian còn lại đến mốc 24h tiếp theo
 function calculateTimeToNextPrice() {
     const startTime = getStartTimestamp();
     const now = Date.now();
@@ -284,9 +275,7 @@ function calculateTimeToNextPrice() {
     };
 }
 
-// Hàm cập nhật giá và đồng hồ
 function updatePriceAndCountdown() {
-    // Cập nhật giá ở 3 nơi
     const currentPrice = calculateCurrentPrice();
     const priceEl = document.getElementById('unlimitedPrice');
     const priceBtnEl = document.getElementById('unlimitedPriceBtn');
@@ -296,7 +285,6 @@ function updatePriceAndCountdown() {
     if (priceBtnEl) priceBtnEl.textContent = currentPrice;
     if (modalPriceEl) modalPriceEl.textContent = currentPrice;
 
-    // Cập nhật đồng hồ đếm ngược
     const time = calculateTimeToNextPrice();
     const hoursEl = document.getElementById('cd-hours');
     const minutesEl = document.getElementById('cd-minutes');
@@ -307,7 +295,6 @@ function updatePriceAndCountdown() {
     if (secondsEl) secondsEl.textContent = String(time.seconds).padStart(2, '0');
 }
 
-// Chạy lần đầu và lặp lại mỗi giây
 if (document.getElementById('countdownTimer')) {
     updatePriceAndCountdown();
     setInterval(updatePriceAndCountdown, 1000);
@@ -318,7 +305,7 @@ if (document.getElementById('countdownTimer')) {
    ========================================= */
 
 function copyRefCode(event) {
-    const code = 'UN60VTqp';
+    const code = 'Pn53NvR8';
     navigator.clipboard.writeText(code).then(() => {
         const btn = event.target;
         const originalText = btn.innerHTML;
@@ -356,7 +343,6 @@ function copyText(text, event) {
 }
 
 function copyBody(event) {
-    const userName = document.getElementById('userNameInput')?.value || '(Your Name)';
     const userEmail = document.getElementById('userEmailInput')?.value || '[Your Email]';
     
     const bodyText = `Dear Iskandar,

@@ -313,9 +313,7 @@ nav a:hover { color: #ffd700; }
 .step-card h3 { margin-bottom: 10px; }
 .step-card p { color: #aaa; font-size: 14px; }
 
-/* =========================================
-   PRICING - FIX SỐ 899 VÀNG VÀ TO NHƯ 299
-   ========================================= */
+/* PRICING */
 .pricing {
     padding: 80px 50px;
     max-width: 1400px;
@@ -377,7 +375,6 @@ nav a:hover { color: #ffd700; }
     gap: 6px;
 }
 
-/* Số giá (cả 299 và 899) đều vàng, to 48px */
 .price .price-number,
 .price #unlimitedPrice,
 .price #unlimitedPriceBtn {
@@ -388,19 +385,12 @@ nav a:hover { color: #ffd700; }
     display: inline !important;
 }
 
-/* Ký hiệu $ */
-.price {
-    color: #ffd700;
-}
-
-/* Đơn vị USDT nhỏ, xám */
 .price .price-unit {
     font-size: 16px !important;
     color: #888 !important;
     font-weight: 600 !important;
 }
 
-/* Badge HOT */
 .price .hot-badge {
     font-size: 11px !important;
     color: #000 !important;
@@ -409,7 +399,6 @@ nav a:hover { color: #ffd700; }
     margin-left: 8px;
 }
 
-/* Giá miễn phí */
 .free-price {
     color: #22c55e !important;
     font-size: 48px;
@@ -518,7 +507,7 @@ nav a:hover { color: #ffd700; }
 
 /* DOWNLOAD */
 .download { padding: 80px 50px; max-width: 1400px; margin: 0 auto; }
-.download-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
+.download-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 30px; max-width: 500px; margin-left: auto; margin-right: auto; }
 
 .download-card {
     background: #111;
@@ -552,6 +541,18 @@ nav a:hover { color: #ffd700; }
     font-size: 13px;
     color: #aaa;
     margin-bottom: 20px;
+}
+
+/* Nút tải xuống (thẻ <a>) */
+.download-card a.btn-primary,
+.download-card a.btn-secondary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* FAQ */
