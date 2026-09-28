@@ -12,6 +12,38 @@
     <!-- HEADER -->
     <header class="faq-header">
         <a href="index.html" class="back-link">← Trở lại GoldHunter</a>
+
+        <!-- DROPDOWN NGÔN NGỮ -->
+        <div class="lang-selector" id="langSelector">
+            <button class="lang-btn" id="langBtn" type="button">
+                <span class="globe-icon">🌐</span>
+                <span id="currentLang">Tiếng Việt</span>
+                <span class="arrow">▼</span>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+                <a href="#" data-lang="vi">Tiếng Việt <span class="check">✓</span></a>
+                <a href="#" data-lang="en">English</a>
+                <a href="#" data-lang="ms">Bahasa Melayu</a>
+                <a href="#" data-lang="id">Bahasa Indonesia</a>
+                <a href="#" data-lang="zh-CN">简体中文</a>
+                <a href="#" data-lang="zh-TW">繁體中文</a>
+                <a href="#" data-lang="th">ไทย</a>
+                <a href="#" data-lang="ko">한국어</a>
+                <a href="#" data-lang="ja">日本語</a>
+                <a href="#" data-lang="tl">Filipino</a>
+                <a href="#" data-lang="hi">हिन्दी</a>
+                <a href="#" data-lang="es">Español</a>
+                <a href="#" data-lang="pt">Português (Brasil)</a>
+                <a href="#" data-lang="ru">Русский</a>
+                <a href="#" data-lang="fr">Français</a>
+                <a href="#" data-lang="de">Deutsch</a>
+                <a href="#" data-lang="mn">Монгол</a>
+                <a href="#" data-lang="kk">Қазақша</a>
+                <a href="#" data-lang="uz">O'zbekcha</a>
+                <a href="#" data-lang="en-ZA">English (South Africa)</a>
+            </div>
+        </div>
+
         <a href="https://t.me/+84378535155" target="_blank" class="support-btn">💬 Ứng hộ</a>
     </header>
 
@@ -976,7 +1008,7 @@
         <a href="https://t.me/+84378535155" target="_blank" class="btn-cta">💬 Liên Hệ Hỗ Trợ</a>
     </section>
 
-    <!-- Script tự động thêm data-search cho tất cả câu hỏi -->
+    <!-- Script tự động thêm data-search -->
     <script>
     (function() {
         document.addEventListener('DOMContentLoaded', function() {
@@ -989,6 +1021,19 @@
         });
     })();
     </script>
+
+    <!-- GOOGLE TRANSLATE CHẠY NGẦM -->
+    <div id="google_translate_element" style="position:fixed; bottom:0; right:0; width:0; height:0; opacity:0; pointer-events:none; z-index:-1;"></div>
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'vi',
+        includedLanguages: 'en,ms,id,zh-CN,zh-TW,vi,th,ko,ja,tl,hi,es,pt,ru,fr,de,mn,kk,uz,en-ZA',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script src="script.js"></script>
 </body>
