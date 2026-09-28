@@ -582,7 +582,7 @@ nav a:hover { color: #ffd700; }
 }
 
 /* =========================================
-   FAQ - CÂU HỎI THƯỜNG GẶP (MỚI)
+   FAQ (TRANG CHỦ - TÓM TẮT)
    ========================================= */
 .faq {
     padding: 80px 50px;
@@ -604,7 +604,6 @@ nav a:hover { color: #ffd700; }
     margin-bottom: 40px;
 }
 
-/* Tabs */
 .faq-tabs {
     display: flex;
     justify-content: center;
@@ -638,22 +637,18 @@ nav a:hover { color: #ffd700; }
     font-weight: 700;
 }
 
-/* Nội dung tab */
 .faq-content {
     display: none;
     animation: faqFadeIn 0.3s ease-out;
 }
 
-.faq-content.active {
-    display: block;
-}
+.faq-content.active { display: block; }
 
 @keyframes faqFadeIn {
     from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Danh sách FAQ - 2 cột */
 .faq-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -662,7 +657,6 @@ nav a:hover { color: #ffd700; }
     align-items: start;
 }
 
-/* Từng câu hỏi */
 .faq-item {
     background: #0d0d0d;
     border: 1px solid #222;
@@ -671,16 +665,13 @@ nav a:hover { color: #ffd700; }
     transition: all 0.3s;
 }
 
-.faq-item:hover {
-    border-color: #333;
-}
+.faq-item:hover { border-color: #333; }
 
 .faq-item.open {
     border-color: #ffd700;
     box-shadow: 0 0 25px rgba(255, 215, 0, 0.08);
 }
 
-/* Câu hỏi */
 .faq-question {
     display: flex;
     justify-content: space-between;
@@ -707,11 +698,8 @@ nav a:hover { color: #ffd700; }
     line-height: 1;
 }
 
-.faq-item.open .faq-icon {
-    transform: rotate(180deg);
-}
+.faq-item.open .faq-icon { transform: rotate(180deg); }
 
-/* Câu trả lời */
 .faq-answer {
     max-height: 0;
     overflow: hidden;
@@ -731,7 +719,6 @@ nav a:hover { color: #ffd700; }
     margin: 0;
 }
 
-/* Nút Xem tất cả */
 .faq-see-all {
     text-align: center;
     margin-top: 40px;
@@ -1126,9 +1113,7 @@ footer {
 .modal-desc { color: #aaa; font-size: 14px; line-height: 1.6; margin-bottom: 24px; }
 .modal-label { color: #ffd700; font-size: 14px; font-weight: 600; margin-bottom: 16px; }
 
-/* =========================================
-   MODAL MUA
-   ========================================= */
+/* MODAL MUA */
 .buy-modal-box { max-width: 520px; padding: 32px 28px 28px; }
 .buy-modal-box h2 { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
 .buy-subtitle { color: #888; font-size: 14px; margin-bottom: 24px; }
@@ -1225,9 +1210,7 @@ footer {
     box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
 }
 
-/* =========================================
-   MODAL EMAIL
-   ========================================= */
+/* MODAL EMAIL */
 .email-block {
     background: #0a0a0a;
     border: 1px solid #222;
@@ -1296,6 +1279,428 @@ footer {
 .modal-box::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
 
 /* =========================================
+   TRANG FAQ ĐẦY ĐỦ (faq.html)
+   ========================================= */
+body.faq-page {
+    background-color: #0a0a0a;
+}
+
+/* Header FAQ */
+.faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: rgba(10, 10, 10, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.back-link {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.back-link:hover { color: #ffd700; }
+
+.support-btn {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.support-btn:hover { border-color: #ffd700; color: #ffd700; }
+
+/* Hero FAQ */
+.faq-hero {
+    text-align: center;
+    padding: 60px 30px 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.badge-support {
+    display: inline-block;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #ffd700;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.faq-hero h1 {
+    font-size: 56px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 16px;
+}
+
+.faq-hero-subtitle {
+    color: #aaa;
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+
+/* Ô tìm kiếm */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #0d0d0d;
+    border: 1px solid #333;
+    border-radius: 30px;
+    padding: 12px 24px;
+    max-width: 650px;
+    margin: 0 auto 28px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.search-box:focus-within {
+    border-color: #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+}
+
+.search-icon {
+    font-size: 16px;
+    margin-right: 12px;
+    opacity: 0.6;
+}
+
+.search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+}
+
+.search-box input::placeholder { color: #666; }
+
+.search-kbd {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #888;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: monospace;
+}
+
+/* Câu hỏi phổ biến */
+.popular-questions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.popular-label {
+    color: #888;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.popular-tag {
+    background: #0d0d0d;
+    border: 1px solid #222;
+    color: #ccc;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.popular-tag:hover {
+    background: #ffd700;
+    color: #000;
+    border-color: #ffd700;
+}
+
+/* Tabs danh mục */
+.faq-tabs-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.faq-tabs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.faq-cat-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #0d0d0d;
+    border: 1px solid #222;
+    color: #ccc;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.faq-cat-btn:hover {
+    border-color: #ffd700;
+    color: #ffd700;
+}
+
+.faq-cat-btn.active {
+    background: #ffd700;
+    color: #000;
+    border-color: #ffd700;
+    font-weight: 700;
+}
+
+.cat-icon { font-size: 14px; }
+
+.cat-count {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.faq-cat-btn.active .cat-count {
+    background: rgba(0, 0, 0, 0.15);
+    color: #000;
+}
+
+/* Thanh điều khiển */
+.faq-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto 24px;
+    padding: 0 30px;
+}
+
+.faq-count-display {
+    color: #888;
+    font-size: 14px;
+}
+
+.btn-expand-all {
+    background: transparent;
+    border: none;
+    color: #ffd700;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-expand-all:hover { text-decoration: underline; }
+
+/* Container FAQ */
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 30px 60px;
+}
+
+/* Danh mục */
+.faq-category {
+    margin-bottom: 40px;
+}
+
+.faq-category.hidden { display: none; }
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-left: 4px;
+}
+
+.cat-badge {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.category-header h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffd700;
+}
+
+/* Câu hỏi */
+.faq-list-full {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-item-full {
+    background: #0d0d0d;
+    border: 1px solid #222;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.faq-item-full:hover { border-color: #333; }
+
+.faq-item-full.open {
+    border-color: #ffd700;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.08);
+}
+
+.faq-item-full.hidden { display: none; }
+
+.faq-question-full {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    cursor: pointer;
+    gap: 16px;
+    user-select: none;
+}
+
+.faq-question-full .faq-q-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.4;
+}
+
+.faq-item-full.open .faq-icon { transform: rotate(180deg); }
+
+.faq-answer-full {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 24px;
+}
+
+.faq-item-full.open .faq-answer-full {
+    max-height: 2000px;
+    padding: 0 24px 24px;
+}
+
+.faq-answer-full p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.75;
+    margin-bottom: 12px;
+}
+
+.faq-answer-full strong { color: #ffd700; }
+
+.copy-link-btn {
+    background: transparent;
+    border: none;
+    color: #666;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    padding: 4px 8px;
+    margin-top: 8px;
+    transition: color 0.3s;
+}
+
+.copy-link-btn:hover { color: #ffd700; }
+
+/* Không tìm thấy */
+.no-results {
+    text-align: center;
+    padding: 40px 20px;
+    color: #888;
+    font-size: 15px;
+}
+
+.no-results-hint {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.no-results-hint a { color: #ffd700; text-decoration: underline; }
+
+/* CTA cuối */
+.faq-cta {
+    text-align: center;
+    padding: 60px 30px 80px;
+    background: linear-gradient(180deg, #0a0a0a 0%, #0d0d0d 100%);
+    border-top: 1px solid #1a1a1a;
+}
+
+.faq-cta h3 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.faq-cta p {
+    color: #888;
+    font-size: 15px;
+    margin-bottom: 24px;
+}
+
+.btn-cta {
+    display: inline-block;
+    background: #ffd700;
+    color: #000;
+    padding: 16px 32px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-cta:hover {
+    background: #e6c200;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
+}
+
+/* =========================================
    RESPONSIVE
    ========================================= */
 @media (max-width: 1200px) {
@@ -1316,7 +1721,7 @@ footer {
     .feature-grid, .steps-grid, .pricing-grid, .download-grid { grid-template-columns: 1fr; }
     .tradingview-widget-container { height: 400px; }
 
-    /* FAQ Responsive */
+    /* FAQ trang chủ */
     .faq { padding: 50px 20px; }
     .faq h2 { font-size: 30px; }
     .faq-list { grid-template-columns: 1fr; }
@@ -1326,7 +1731,7 @@ footer {
     .faq-answer { padding: 0 20px; }
     .faq-item.open .faq-answer { padding: 0 20px 20px; }
 
-    /* Free Access Responsive */
+    /* Free Access */
     .free-hero { padding: 40px 20px 30px; }
     .free-hero h1 { font-size: 36px; }
     .step-block { flex-direction: column; padding: 24px 20px; }
@@ -1335,7 +1740,7 @@ footer {
     .quick-step span:not(.qs-num) { display: none; }
     .quick-step.active span:not(.qs-num) { display: inline; }
 
-    /* Modal Responsive */
+    /* Modal */
     .modal-box { padding: 24px 20px; }
     .modal-box h2 { font-size: 18px; }
     .buy-modal-box { padding: 24px 20px 20px; }
@@ -1352,4 +1757,22 @@ footer {
     .price { font-size: 36px; }
     .price .price-number, .price #unlimitedPrice, .price #unlimitedPriceBtn { font-size: 36px !important; }
     .free-price { font-size: 36px !important; }
+
+    /* FAQ đầy đủ */
+    .faq-header { padding: 15px 20px; }
+    .faq-hero { padding: 40px 20px 30px; }
+    .faq-hero h1 { font-size: 34px; }
+    .faq-hero-subtitle { font-size: 14px; }
+    .faq-tabs-wrapper { padding: 0 20px; }
+    .faq-cat-btn { font-size: 12px; padding: 8px 14px; }
+    .faq-controls { padding: 0 20px; }
+    .faq-container { padding: 0 20px 40px; }
+    .faq-question-full { padding: 16px 18px; }
+    .faq-question-full .faq-q-text { font-size: 14px; }
+    .faq-answer-full { padding: 0 18px; }
+    .faq-item-full.open .faq-answer-full { padding: 0 18px 18px; }
+    .popular-tag { font-size: 12px; padding: 8px 14px; }
+    .category-header h2 { font-size: 18px; }
+    .search-box { padding: 10px 18px; }
+    .search-kbd { display: none; }
 }
