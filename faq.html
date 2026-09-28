@@ -9,13 +9,13 @@
 </head>
 <body class="faq-page">
 
-    <!-- HEADER ĐƠN GIẢN -->
+    <!-- HEADER -->
     <header class="faq-header">
         <a href="index.html" class="back-link">← Trở lại GoldHunter</a>
         <a href="https://t.me/+84378535155" target="_blank" class="support-btn">💬 Ứng hộ</a>
     </header>
 
-    <!-- HERO CỦA TRANG FAQ -->
+    <!-- HERO -->
     <section class="faq-hero">
         <div class="badge-support">🎧 TRUNG TÂM TRỢ GIÚP</div>
         <h1>Chúng tôi có thể <span class="highlight-gold">giúp gì?</span></h1>
@@ -81,7 +81,7 @@
     <!-- NỘI DUNG FAQ -->
     <section class="faq-container" id="faqContainer">
 
-        <!-- ===================== DANH MỤC: BẮT ĐẦU ===================== -->
+        <!-- ========== BẮT ĐẦU ========== -->
         <div class="faq-category" data-category="bat-dau">
             <div class="category-header">
                 <span class="cat-badge">🚀</span>
@@ -169,7 +169,7 @@
             </div>
         </div>
 
-        <!-- ===================== DANH MỤC: ĐỊNH GIÁ & CẤP PHÉP ===================== -->
+        <!-- ========== ĐỊNH GIÁ & CẤP PHÉP ========== -->
         <div class="faq-category" data-category="dinh-gia">
             <div class="category-header">
                 <span class="cat-badge">🏷️</span>
@@ -290,7 +290,7 @@
             </div>
         </div>
 
-        <!-- ===================== DANH MỤC: MÔI GIỚI & KẾ TOÁN ===================== -->
+        <!-- ========== MÔI GIỚI & KẾ TOÁN ========== -->
         <div class="faq-category" data-category="moi-gioi">
             <div class="category-header">
                 <span class="cat-badge">🏦</span>
@@ -422,7 +422,7 @@
             </div>
         </div>
 
-        <!-- ===================== DANH MỤC: VỐN & RỦI RO ===================== -->
+        <!-- ========== VỐN & RỦI RO ========== -->
         <div class="faq-category" data-category="von-rui-ro">
             <div class="category-header">
                 <span class="cat-badge">💰</span>
@@ -532,7 +532,7 @@
             </div>
         </div>
 
-        <!-- ===================== DANH MỤC: CHIẾN LƯỢC & HIỆU SUẤT ===================== -->
+        <!-- ========== CHIẾN LƯỢC & HIỆU SUẤT ========== -->
         <div class="faq-category" data-category="chien-luoc">
             <div class="category-header">
                 <span class="cat-badge">📈</span>
@@ -642,7 +642,7 @@
             </div>
         </div>
 
-        <!-- ===================== DANH MỤC: THIẾT LẬP & CÀI ĐẶT ===================== -->
+        <!-- ========== THIẾT LẬP & CÀI ĐẶT ========== -->
         <div class="faq-category" data-category="thiet-lap">
             <div class="category-header">
                 <span class="cat-badge">⚙️</span>
@@ -774,7 +774,7 @@
             </div>
         </div>
 
-        <!-- ===================== DANH MỤC: VPS 24/5 ===================== -->
+        <!-- ========== VPS 24/5 ========== -->
         <div class="faq-category" data-category="vps">
             <div class="category-header">
                 <span class="cat-badge">🖥️</span>
@@ -862,7 +862,7 @@
             </div>
         </div>
 
-        <!-- ===================== DANH MỤC: KHẮC PHỤC SỰ CỐ ===================== -->
+        <!-- ========== KHẮC PHỤC SỰ CỐ ========== -->
         <div class="faq-category" data-category="khac-phuc">
             <div class="category-header">
                 <span class="cat-badge">🛠️</span>
@@ -975,6 +975,20 @@
         <p>Bộ phận hỗ trợ của chúng tôi luôn sẵn sàng trên Telegram.</p>
         <a href="https://t.me/+84378535155" target="_blank" class="btn-cta">💬 Liên Hệ Hỗ Trợ</a>
     </section>
+
+    <!-- Script tự động thêm data-search cho tất cả câu hỏi -->
+    <script>
+    (function() {
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.faq-item-full').forEach(item => {
+                const questionText = item.querySelector('.faq-q-text')?.textContent.trim() || '';
+                const answerText = item.querySelector('.faq-answer-full p')?.textContent.trim() || '';
+                const category = item.getAttribute('data-category') || '';
+                item.setAttribute('data-search', (questionText + ' ' + answerText + ' ' + category).toLowerCase());
+            });
+        });
+    })();
+    </script>
 
     <script src="script.js"></script>
 </body>
