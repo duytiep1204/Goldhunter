@@ -4,48 +4,36 @@
 const closeBannerBtn = document.querySelector('.close-banner');
 if (closeBannerBtn) {
     closeBannerBtn.addEventListener('click', function() {
-        document.querySelector('.top-banner').style.display = 'none';
+        const banner = document.querySelector('.top-banner');
+        if (banner) banner.style.display = 'none';
     });
 }
 
 /* =========================================
-   2. FAQ - TABS & ACCORDION
+   2. FAQ TRANG CHỦ (TABS + ACCORDION)
    ========================================= */
-
-// Xử lý chuyển tab
 document.querySelectorAll('.faq-tabs button').forEach(button => {
     button.addEventListener('click', () => {
-        // Bỏ active ở tất cả các nút tab
         document.querySelectorAll('.faq-tabs button').forEach(btn => btn.classList.remove('active'));
-        // Bỏ active ở tất cả các nội dung tab
         document.querySelectorAll('.faq-content').forEach(content => content.classList.remove('active'));
 
-        // Thêm active cho nút vừa bấm
         button.classList.add('active');
-        // Hiện nội dung tab tương ứng
         const tabId = button.getAttribute('data-tab');
         const tabContent = document.getElementById(tabId);
-        if (tabContent) {
-            tabContent.classList.add('active');
-        }
+        if (tabContent) tabContent.classList.add('active');
     });
 });
 
-// Xử lý mở/đóng câu hỏi (accordion)
 document.querySelectorAll('.faq-item').forEach(item => {
     const question = item.querySelector('.faq-question');
     if (question) {
         question.addEventListener('click', () => {
-            // Đóng tất cả các câu hỏi khác (chỉ mở 1 câu tại 1 thời điểm)
             const parentList = item.closest('.faq-list');
             if (parentList) {
                 parentList.querySelectorAll('.faq-item').forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('open');
-                    }
+                    if (otherItem !== item) otherItem.classList.remove('open');
                 });
             }
-            // Toggle câu hỏi hiện tại
             item.classList.toggle('open');
         });
     }
@@ -59,7 +47,7 @@ const langBtn = document.getElementById('langBtn');
 const currentLangSpan = document.getElementById('currentLang');
 const langLinks = document.querySelectorAll('#langDropdown a');
 
-if (langBtn) {
+if (langBtn && langSelector) {
     langBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         langSelector.classList.toggle('open');
@@ -135,7 +123,7 @@ window.addEventListener('load', function() {
             const value = cookie.substring('googtrans='.length);
             const parts = value.split('/');
             const currentLangCode = parts[parts.length - 1];
-            
+
             if (currentLangCode && langNames[currentLangCode] && currentLangSpan) {
                 currentLangSpan.textContent = langNames[currentLangCode];
                 langLinks.forEach(l => {
@@ -175,7 +163,6 @@ setInterval(hideGoogleBanner, 500);
 /* =========================================
    5. MODAL THANH TOÁN
    ========================================= */
-
 function openBuyModal299() {
     const modal = document.getElementById('buyModal299');
     if (modal) {
@@ -263,9 +250,8 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* =========================================
-   6. ĐỒNG HỒ ĐẾM NGƯỢC - GIÁ TĂNG 5 USDT MỖI 24H
+   6. ĐỒNG HỒ ĐẾM NGƯỢC - GIÁ ĐỘNG
    ========================================= */
-
 const PRICE_CONFIG = {
     startPrice: 899,
     incrementPerDay: 5,
@@ -281,9 +267,7 @@ function calculateCurrentPrice() {
     const now = Date.now();
     const elapsedMs = now - startTime;
     const elapsedDays = Math.floor(elapsedMs / (24 * 60 * 60 * 1000));
-    
-    const currentPrice = PRICE_CONFIG.startPrice + (elapsedDays * PRICE_CONFIG.incrementPerDay);
-    return currentPrice;
+    return PRICE_CONFIG.startPrice + (elapsedDays * PRICE_CONFIG.incrementPerDay);
 }
 
 function calculateTimeToNextPrice() {
@@ -293,7 +277,7 @@ function calculateTimeToNextPrice() {
     const msInDay = 24 * 60 * 60 * 1000;
     const msSinceLastCycle = elapsedMs % msInDay;
     const msUntilNext = msInDay - msSinceLastCycle;
-    
+
     return {
         hours: Math.floor(msUntilNext / (60 * 60 * 1000)),
         minutes: Math.floor((msUntilNext % (60 * 60 * 1000)) / (60 * 1000)),
@@ -306,7 +290,7 @@ function updatePriceAndCountdown() {
     const priceEl = document.getElementById('unlimitedPrice');
     const priceBtnEl = document.getElementById('unlimitedPriceBtn');
     const modalPriceEl = document.getElementById('modalUnlimitedPrice');
-    
+
     if (priceEl) priceEl.textContent = currentPrice;
     if (priceBtnEl) priceBtnEl.textContent = currentPrice;
     if (modalPriceEl) modalPriceEl.textContent = currentPrice;
@@ -315,7 +299,7 @@ function updatePriceAndCountdown() {
     const hoursEl = document.getElementById('cd-hours');
     const minutesEl = document.getElementById('cd-minutes');
     const secondsEl = document.getElementById('cd-seconds');
-    
+
     if (hoursEl) hoursEl.textContent = String(time.hours).padStart(2, '0');
     if (minutesEl) minutesEl.textContent = String(time.minutes).padStart(2, '0');
     if (secondsEl) secondsEl.textContent = String(time.seconds).padStart(2, '0');
@@ -329,9 +313,8 @@ if (document.getElementById('countdownTimer')) {
 /* =========================================
    7. HÀM CHO TRANG FREE ACCESS
    ========================================= */
-
 function copyRefCode(event) {
-    const code = 'Pn53NvR8';
+    const code = 'UN60VTqp';
     navigator.clipboard.writeText(code).then(() => {
         const btn = event.target;
         const originalText = btn.innerHTML;
@@ -347,12 +330,18 @@ function copyRefCode(event) {
 }
 
 function openExistingModal() {
-    document.getElementById('existingModal').classList.add('active');
-    document.body.style.overflow = 'hidden';
+    const modal = document.getElementById('existingModal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 }
 function closeExistingModal() {
-    document.getElementById('existingModal').classList.remove('active');
-    document.body.style.overflow = '';
+    const modal = document.getElementById('existingModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 }
 
 function copyText(text, event) {
@@ -370,7 +359,7 @@ function copyText(text, event) {
 
 function copyBody(event) {
     const userEmail = document.getElementById('userEmailInput')?.value || '[Your Email]';
-    
+
     const bodyText = `Dear Iskandar,
 
 Please assist to move my account under IB (32368874).
@@ -378,7 +367,7 @@ Please assist to move my account under IB (32368874).
 My registered email: ${userEmail}
 
 Thank you.`;
-    
+
     navigator.clipboard.writeText(bodyText).then(() => {
         const btn = event.target;
         const originalText = btn.innerHTML;
@@ -457,3 +446,204 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+/* =========================================
+   9. TRANG FAQ ĐẦY ĐỦ (faq.html)
+   ========================================= */
+(function() {
+    const faqContainer = document.getElementById('faqContainer');
+    if (!faqContainer) return;
+
+    /* 9.1. ACCORDION */
+    document.querySelectorAll('.faq-item-full').forEach(item => {
+        const question = item.querySelector('.faq-question-full');
+        if (question) {
+            question.addEventListener('click', () => {
+                item.classList.toggle('open');
+            });
+        }
+    });
+
+    /* 9.2. TABS DANH MỤC */
+    const catButtons = document.querySelectorAll('.faq-cat-btn');
+    const categories = document.querySelectorAll('.faq-category');
+
+    catButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const cat = btn.getAttribute('data-cat');
+
+            catButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            if (cat === 'all') {
+                categories.forEach(c => c.classList.remove('hidden'));
+            } else {
+                categories.forEach(c => {
+                    if (c.getAttribute('data-category') === cat) {
+                        c.classList.remove('hidden');
+                    } else {
+                        c.classList.add('hidden');
+                    }
+                });
+            }
+
+            updateVisibleCount();
+            const controls = document.querySelector('.faq-controls');
+            if (controls) controls.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    /* 9.3. NÚT MỞ RỘNG TẤT CẢ */
+    const btnExpandAll = document.getElementById('btnExpandAll');
+    if (btnExpandAll) {
+        btnExpandAll.addEventListener('click', () => {
+            const visibleItems = document.querySelectorAll('.faq-item-full:not(.hidden)');
+            const allOpen = Array.from(visibleItems).every(item => item.classList.contains('open'));
+
+            if (allOpen) {
+                visibleItems.forEach(item => item.classList.remove('open'));
+                btnExpandAll.textContent = 'Mở rộng tất cả';
+            } else {
+                visibleItems.forEach(item => item.classList.add('open'));
+                btnExpandAll.textContent = 'Thu gọn tất cả';
+            }
+        });
+    }
+
+    /* 9.4. ĐẾM SỐ CÂU HỎI HIỂN THỊ */
+    function updateVisibleCount() {
+        const visibleItems = document.querySelectorAll('.faq-item-full:not(.hidden)');
+        const countDisplay = document.getElementById('faqVisibleCount');
+        if (countDisplay) countDisplay.textContent = visibleItems.length;
+    }
+    updateVisibleCount();
+
+    /* 9.5. TÌM KIẾM */
+    const searchInput = document.getElementById('faqSearch');
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const keyword = e.target.value.trim().toLowerCase();
+            const items = document.querySelectorAll('.faq-item-full');
+            const noResults = document.getElementById('noResults');
+            const searchTermSpan = document.getElementById('searchTerm');
+
+            if (keyword === '') {
+                items.forEach(item => item.classList.remove('hidden'));
+                categories.forEach(c => c.classList.remove('hidden'));
+                if (noResults) noResults.style.display = 'none';
+                updateVisibleCount();
+                return;
+            }
+
+            let visibleCount = 0;
+
+            items.forEach(item => {
+                const questionText = item.querySelector('.faq-q-text')?.textContent.toLowerCase() || '';
+                const answerText = item.querySelector('.faq-answer-full p')?.textContent.toLowerCase() || '';
+
+                if (questionText.includes(keyword) || answerText.includes(keyword)) {
+                    item.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            categories.forEach(cat => {
+                const visibleInCat = cat.querySelectorAll('.faq-item-full:not(.hidden)').length;
+                if (visibleInCat > 0) {
+                    cat.classList.remove('hidden');
+                } else {
+                    cat.classList.add('hidden');
+                }
+            });
+
+            if (visibleCount === 0) {
+                if (noResults) {
+                    if (searchTermSpan) searchTermSpan.textContent = e.target.value;
+                    noResults.style.display = 'block';
+                }
+            } else {
+                if (noResults) noResults.style.display = 'none';
+            }
+
+            updateVisibleCount();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '/' && document.activeElement !== searchInput) {
+                e.preventDefault();
+                searchInput.focus();
+            }
+            if (e.key === 'Escape' && document.activeElement === searchInput) {
+                searchInput.value = '';
+                searchInput.dispatchEvent(new Event('input'));
+                searchInput.blur();
+            }
+        });
+    }
+
+    /* 9.6. CLICK CÂU HỎI PHỔ BIẾN */
+    document.querySelectorAll('.popular-tag').forEach(tag => {
+        tag.addEventListener('click', () => {
+            const questionText = tag.textContent.toLowerCase().trim();
+
+            catButtons.forEach(b => b.classList.remove('active'));
+            document.querySelector('[data-cat="all"]')?.classList.add('active');
+            categories.forEach(c => c.classList.remove('hidden'));
+            updateVisibleCount();
+
+            let targetItem = null;
+            document.querySelectorAll('.faq-item-full').forEach(item => {
+                const qText = item.querySelector('.faq-q-text')?.textContent.toLowerCase().trim() || '';
+                if (qText.includes(questionText.split(' ').slice(0, 5).join(' '))) {
+                    targetItem = item;
+                }
+            });
+
+            if (targetItem) {
+                setTimeout(() => {
+                    targetItem.classList.add('open');
+                    targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    targetItem.style.boxShadow = '0 0 30px rgba(255, 215, 0, 0.4)';
+                    setTimeout(() => { targetItem.style.boxShadow = ''; }, 2000);
+                }, 100);
+            }
+        });
+    });
+
+    /* 9.7. SAO CHÉP LINK CÂU HỎI */
+    window.copyQuestionLink = function(btn) {
+        const item = btn.closest('.faq-item-full');
+        const questionText = item.querySelector('.faq-q-text')?.textContent || '';
+        const encoded = encodeURIComponent(questionText);
+        const url = `${window.location.origin}${window.location.pathname}#q-${encoded}`;
+
+        navigator.clipboard.writeText(url).then(() => {
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '✓ Đã sao chép';
+            btn.style.color = '#22c55e';
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.color = '';
+            }, 1800);
+        }).catch(() => alert('Link: ' + url));
+    };
+
+    /* 9.8. TỰ ĐỘNG MỞ CÂU HỎI TỪ HASH URL */
+    if (window.location.hash) {
+        const hash = decodeURIComponent(window.location.hash.substring(1));
+        if (hash.startsWith('q-')) {
+            const questionToFind = hash.substring(2).toLowerCase();
+            document.querySelectorAll('.faq-item-full').forEach(item => {
+                const qText = item.querySelector('.faq-q-text')?.textContent.toLowerCase() || '';
+                if (qText === questionToFind) {
+                    item.classList.add('open');
+                    setTimeout(() => {
+                        item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 300);
+                }
+            });
+        }
+    }
+})();
