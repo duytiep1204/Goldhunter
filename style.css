@@ -1775,4 +1775,29 @@ body.faq-page {
     .category-header h2 { font-size: 18px; }
     .search-box { padding: 10px 18px; }
     .search-kbd { display: none; }
+   /* =========================================
+   HIGHLIGHT TỪ KHÓA TÌM KIẾM TRONG FAQ
+   ========================================= */
+.faq-item-full mark,
+.faq-item-full .highlight {
+    background: rgba(255, 215, 0, 0.3);
+    color: #ffd700;
+    padding: 0 2px;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+/* Khi không có kết quả tìm kiếm */
+.no-results mark {
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.15);
+    padding: 0 4px;
+    border-radius: 4px;
+}
+
+/* Tab có 0 kết quả - làm mờ */
+.faq-cat-btn .cat-count.zero {
+    background: rgba(220, 38, 38, 0.2);
+    color: #f87171;
+}
 }
