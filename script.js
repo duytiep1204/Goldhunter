@@ -184,7 +184,6 @@ function openBuyModalUnlimited() {
     if (modalPrice && displayPrice) {
         modalPrice.textContent = displayPrice.textContent;
     }
-
     const modal = document.getElementById('buyModalUnlimited');
     if (modal) {
         modal.classList.add('active');
@@ -359,7 +358,6 @@ function copyText(text, event) {
 
 function copyBody(event) {
     const userEmail = document.getElementById('userEmailInput')?.value || '[Your Email]';
-
     const bodyText = `Dear Iskandar,
 
 Please assist to move my account under IB (32368874).
@@ -448,7 +446,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* =========================================
-   9. TRANG FAQ ĐẦY ĐỦ (faq.html)
+   9. TRANG FAQ ĐẦY ĐỦ
    ========================================= */
 (function() {
     const faqContainer = document.getElementById('faqContainer');
@@ -487,6 +485,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
 
+            updateTabCounts();
             updateVisibleCount();
             const controls = document.querySelector('.faq-controls');
             if (controls) controls.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -510,7 +509,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    /* 9.4. ĐẾM SỐ CÂU HỎI HIỂN THỊ */
+    /* 9.4. HÀM ĐẾM SỐ CÂU HỎI HIỂN THỊ */
     function updateVisibleCount() {
         const visibleItems = document.querySelectorAll('.faq-item-full:not(.hidden)');
         const countDisplay = document.getElementById('faqVisibleCount');
@@ -518,34 +517,161 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     updateVisibleCount();
 
-    /* 9.5. TÌM KIẾM */
+    /* 9.5. CẬP NHẬT SỐ ĐẾM TRÊN TABS */
+    function updateTabCounts() {
+        catButtons.forEach(btn => {
+            const catKey = btn.getAttribute('data-cat');
+            const countSpan = btn.querySelector('.cat-count');
+            if (!countSpan) return;
+
+            if (catKey === 'all') {
+                const total = document.querySelectorAll('.faq-item-full:not(.hidden)').length;
+                countSpan.textContent = total;
+            } else {
+                const cat = document.querySelector(`.faq-category[data-category="${catKey}"]`);
+                if (cat) {
+                    const count = cat.querySelectorAll('.faq-item-full:not(.hidden)').length;
+                    countSpan.textContent = count;
+                }
+            }
+        });
+    }
+
+    /* ========================================
+       9.6. TÌM KIẾM - SO SÁNH CẢ CÂU HỎI VÀ CÂU TRẢ LỜI
+       ======================================== */
     const searchInput = document.getElementById('faqSearch');
+
+    // Chuẩn hóa chuỗi: bỏ dấu tiếng Việt
+    function normalizeText(text) {
+        return text
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/đ/g, 'd')
+            .replace(/Đ/g, 'd')
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+
+    // Lấy nội dung tìm kiếm
+    function getSearchableContent(item) {
+        const dataSearch = item.getAttribute('data-search');
+        if (dataSearch) {
+            return {
+                raw: dataSearch,
+                normalized: normalizeText(dataSearch)
+            };
+        }
+        const questionText = item.querySelector('.faq-q-text')?.textContent || '';
+        const answerText = item.querySelector('.faq-answer-full p')?.textContent || '';
+        const category = item.getAttribute('data-category') || '';
+        const categoryNames = {
+            'bat-dau': 'bắt đầu bat dau',
+            'dinh-gia': 'định giá cấp phép dinh gia cap phep license',
+            'moi-gioi': 'môi giới kế toán moi gioi ke toan broker',
+            'von-rui-ro': 'vốn rủi ro von rui ro capital risk',
+            'chien-luoc': 'chiến lược hiệu suất chien luoc hieu suat strategy',
+            'thiet-lap': 'thiết lập cài đặt thiet lap cai dat setup',
+            'vps': 'vps máy chủ ảo may chu ao virtual server',
+            'khac-phuc': 'khắc phục sự cố hỗ trợ khac phuc su co ho tro fix support'
+        };
+        const categoryText = categoryNames[category] || '';
+        const combined = questionText + ' ' + answerText + ' ' + categoryText;
+        return {
+            raw: combined.toLowerCase(),
+            normalized: normalizeText(combined)
+        };
+    }
+
+    // Tạo index tìm kiếm
+    const searchIndex = [];
+    document.querySelectorAll('.faq-item-full').forEach(item => {
+        const content = getSearchableContent(item);
+        searchIndex.push({
+            element: item,
+            raw: content.raw,
+            normalized: content.normalized,
+            category: item.getAttribute('data-category')
+        });
+    });
+
+    // Hàm highlight từ khóa
+    function highlightKeyword(element, keyword) {
+        const qText = element.querySelector('.faq-q-text');
+        const aText = element.querySelector('.faq-answer-full p');
+        
+        [qText, aText].forEach(el => {
+            if (!el) return;
+            // Xóa highlight cũ
+            el.querySelectorAll('mark.highlight').forEach(mark => {
+                const parent = mark.parentNode;
+                parent.replaceChild(document.createTextNode(mark.textContent), mark);
+                parent.normalize();
+            });
+        });
+
+        if (!keyword || keyword.length < 2) return;
+
+        const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(`(${escapedKeyword})`, 'gi');
+
+        [qText, aText].forEach(el => {
+            if (!el) return;
+            const originalHTML = el.innerHTML;
+            // Chỉ highlight nếu không chứa HTML phức tạp
+            if (!originalHTML.includes('<mark')) {
+                el.innerHTML = originalHTML.replace(regex, '<mark class="highlight">$1</mark>');
+            }
+        });
+    }
+
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
-            const keyword = e.target.value.trim().toLowerCase();
-            const items = document.querySelectorAll('.faq-item-full');
+            const rawKeyword = e.target.value.trim();
             const noResults = document.getElementById('noResults');
             const searchTermSpan = document.getElementById('searchTerm');
+            const countDisplay = document.getElementById('faqVisibleCount');
 
-            if (keyword === '') {
-                items.forEach(item => item.classList.remove('hidden'));
+            if (rawKeyword === '') {
+                document.querySelectorAll('.faq-item-full').forEach(item => {
+                    item.classList.remove('hidden');
+                    // Xóa highlight cũ
+                    item.querySelectorAll('mark.highlight').forEach(mark => {
+                        const parent = mark.parentNode;
+                        parent.replaceChild(document.createTextNode(mark.textContent), mark);
+                        parent.normalize();
+                    });
+                });
                 categories.forEach(c => c.classList.remove('hidden'));
                 if (noResults) noResults.style.display = 'none';
+                updateTabCounts();
                 updateVisibleCount();
                 return;
             }
 
+            const normalizedKeyword = normalizeText(rawKeyword);
+            const lowerKeyword = rawKeyword.toLowerCase();
+
             let visibleCount = 0;
 
-            items.forEach(item => {
-                const questionText = item.querySelector('.faq-q-text')?.textContent.toLowerCase() || '';
-                const answerText = item.querySelector('.faq-answer-full p')?.textContent.toLowerCase() || '';
+            searchIndex.forEach(item => {
+                const matchRaw = item.raw.includes(lowerKeyword);
+                const matchNormalized = item.normalized.includes(normalizedKeyword);
 
-                if (questionText.includes(keyword) || answerText.includes(keyword)) {
-                    item.classList.remove('hidden');
+                if (matchRaw || matchNormalized) {
+                    item.element.classList.remove('hidden');
+                    // Highlight từ khóa
+                    highlightKeyword(item.element, rawKeyword);
                     visibleCount++;
                 } else {
-                    item.classList.add('hidden');
+                    item.element.classList.add('hidden');
+                    // Xóa highlight ở item bị ẩn
+                    item.element.querySelectorAll('mark.highlight').forEach(mark => {
+                        const parent = mark.parentNode;
+                        parent.replaceChild(document.createTextNode(mark.textContent), mark);
+                        parent.normalize();
+                    });
                 }
             });
 
@@ -558,16 +684,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
+            updateTabCounts();
+
             if (visibleCount === 0) {
                 if (noResults) {
-                    if (searchTermSpan) searchTermSpan.textContent = e.target.value;
+                    if (searchTermSpan) searchTermSpan.textContent = rawKeyword;
                     noResults.style.display = 'block';
                 }
             } else {
                 if (noResults) noResults.style.display = 'none';
             }
 
-            updateVisibleCount();
+            if (countDisplay) countDisplay.textContent = visibleCount;
         });
 
         document.addEventListener('keydown', (e) => {
@@ -583,7 +711,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    /* 9.6. CLICK CÂU HỎI PHỔ BIẾN */
+    /* 9.7. CLICK CÂU HỎI PHỔ BIẾN */
     document.querySelectorAll('.popular-tag').forEach(tag => {
         tag.addEventListener('click', () => {
             const questionText = tag.textContent.toLowerCase().trim();
@@ -591,6 +719,7 @@ document.addEventListener('DOMContentLoaded', function() {
             catButtons.forEach(b => b.classList.remove('active'));
             document.querySelector('[data-cat="all"]')?.classList.add('active');
             categories.forEach(c => c.classList.remove('hidden'));
+            updateTabCounts();
             updateVisibleCount();
 
             let targetItem = null;
@@ -612,7 +741,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    /* 9.7. SAO CHÉP LINK CÂU HỎI */
+    /* 9.8. SAO CHÉP LINK CÂU HỎI */
     window.copyQuestionLink = function(btn) {
         const item = btn.closest('.faq-item-full');
         const questionText = item.querySelector('.faq-q-text')?.textContent || '';
@@ -630,7 +759,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }).catch(() => alert('Link: ' + url));
     };
 
-    /* 9.8. TỰ ĐỘNG MỞ CÂU HỎI TỪ HASH URL */
+    /* 9.9. TỰ ĐỘNG MỞ CÂU HỎI TỪ HASH URL */
     if (window.location.hash) {
         const hash = decodeURIComponent(window.location.hash.substring(1));
         if (hash.startsWith('q-')) {
