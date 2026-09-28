@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trung Tâm Trợ Giúp - GoldHunter EA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="faq-page">
+
+    <!-- HEADER ĐƠN GIẢN -->
+    <header class="faq-header">
+        <a href="index.html" class="back-link">← Trở lại GoldHunter</a>
+        <a href="https://t.me/+84378535155" target="_blank" class="support-btn">💬 Ứng hộ</a>
+    </header>
+
+    <!-- HERO CỦA TRANG FAQ -->
+    <section class="faq-hero">
+        <div class="badge-support">🎧 TRUNG TÂM TRỢ GIÚP</div>
+        <h1>Chúng tôi có thể <span class="highlight-gold">giúp gì?</span></h1>
+        <p class="faq-hero-subtitle">72 câu trả lời về GoldHunter EA — giá cả, nhà môi giới, vốn & rủi ro, thiết lập, và hơn thế nữa.</p>
+
+        <!-- Ô TÌM KIẾM -->
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="faqSearch" placeholder="Tìm câu hỏi...">
+            <kbd class="search-kbd">/</kbd>
+        </div>
+
+        <!-- CÂU HỎI PHỔ BIẾN -->
+        <div class="popular-questions">
+            <p class="popular-label">Phổ biến:</p>
+            <button class="popular-tag" data-target="q-cat-1">Tôi có thể nhận được GoldHunter EA bằng cách nào?</button>
+            <button class="popular-tag" data-target="q-cat-1">Tôi cần bao nhiêu vốn để bắt đầu?</button>
+            <button class="popular-tag" data-target="q-cat-6">Tôi có cần VPS để chạy EA không?</button>
+            <button class="popular-tag" data-target="q-cat-8">Tại sao EA không vào lệnh?</button>
+            <button class="popular-tag" data-target="q-cat-2">Tôi nên dùng tài khoản Cent hay Standard?</button>
+        </div>
+    </section>
+
+    <!-- TABS DANH MỤC -->
+    <section class="faq-tabs-wrapper">
+        <div class="faq-tabs-grid" id="faqTabs">
+            <button class="faq-cat-btn active" data-cat="all">
+                <span class="cat-icon">⊞</span> Tất cả <span class="cat-count">72</span>
+            </button>
+            <button class="faq-cat-btn" data-cat="bat-dau">
+                <span class="cat-icon">🚀</span> Bắt đầu <span class="cat-count">7</span>
+            </button>
+            <button class="faq-cat-btn" data-cat="dinh-gia">
+                <span class="cat-icon">🏷️</span> Định giá & Cấp phép <span class="cat-count">10</span>
+            </button>
+            <button class="faq-cat-btn" data-cat="moi-gioi">
+                <span class="cat-icon">🏦</span> Môi giới & Kế toán <span class="cat-count">11</span>
+            </button>
+            <button class="faq-cat-btn" data-cat="von-rui-ro">
+                <span class="cat-icon">💰</span> Vốn và rủi ro <span class="cat-count">9</span>
+            </button>
+            <button class="faq-cat-btn" data-cat="chien-luoc">
+                <span class="cat-icon">📈</span> Chiến lược & Hiệu suất <span class="cat-count">9</span>
+            </button>
+            <button class="faq-cat-btn" data-cat="thiet-lap">
+                <span class="cat-icon">⚙️</span> Thiết lập & Cài đặt <span class="cat-count">11</span>
+            </button>
+            <button class="faq-cat-btn" data-cat="vps">
+                <span class="cat-icon">🖥️</span> Máy chủ ảo VPS hoạt động 24/5 <span class="cat-count">7</span>
+            </button>
+            <button class="faq-cat-btn" data-cat="khac-phuc">
+                <span class="cat-icon">🛠️</span> Khắc phục sự cố & Hỗ trợ <span class="cat-count">8</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- THANH ĐIỀU KHIỂN -->
+    <section class="faq-controls">
+        <p class="faq-count-display"><span id="faqVisibleCount">72</span> câu hỏi</p>
+        <button class="btn-expand-all" id="btnExpandAll">Mở rộng tất cả</button>
+    </section>
+
+    <!-- NỘI DUNG FAQ -->
+    <section class="faq-container" id="faqContainer">
+
+        <!-- ===================== DANH MỤC: BẮT ĐẦU ===================== -->
+        <div class="faq-category" data-category="bat-dau">
+            <div class="category-header">
+                <span class="cat-badge">🚀</span>
+                <h2>Bắt đầu</h2>
+            </div>
+            <div class="faq-list-full">
+
+                <div class="faq-item-full" data-category="bat-dau">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">GoldHunter EA là gì và nó làm gì?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>GoldHunter EA là một robot giao dịch (Expert Advisor) dành cho MetaTrader 5, được xây dựng và tối ưu hóa đặc biệt cho cặp XAUUSD (Vàng) — đó là thị trường mặc định của nó, và nó không được thiết kế cho các cặp tiền tệ khác ngay từ đầu. Đây là một công cụ tự động có rủi ro cao và không đảm bảo lợi nhuận.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="bat-dau">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">EA GoldHunter có hoạt động trên MT4 hay MT5 không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Hiện tại chúng tôi cung cấp bản dựng tối ưu dành cho MT5.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="bat-dau">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có thể chạy GoldHunter EA trên điện thoại của mình không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Không. GoldHunter EA chỉ chạy trên ứng dụng MetaTrader 5 dành cho máy tính để bàn (máy tính Windows, laptop hoặc VPS) — nó không thể chạy trên điện thoại, dù là Android hay iPhone/iOS. Ứng dụng MetaTrader trên điện thoại di động chỉ có thể giám sát tài khoản và giao dịch của bạn; nó không thể chạy một Expert Advisor (EA). Để giao dịch liên tục 24/7, hãy sử dụng VPS.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="bat-dau">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Làm sao để tải GoldHunter EA?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Có hai cách. <strong>Giấy phép trực tiếp:</strong> thanh toán một lần duy nhất trọn đời, hoạt động với bất kỳ nhà môi giới nào và bao gồm các nâng cấp miễn phí; bạn đăng ký ID tài khoản MT của mình (tối đa 5 tài khoản ở gói 5 tài khoản, hoặc không giới hạn số lượng ở gói Không giới hạn). <strong>Truy cập miễn phí:</strong> không mất phí cấp phép — đăng ký qua liên kết chính thức của IB, hoàn tất KYC và nạp tiền. Dù bằng cách nào, giấy phép cũng sẽ bị khóa với các ID tài khoản MT cụ thể mà bạn đăng ký. Xem phần Giá cả để biết chi phí.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="bat-dau">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">GoldHunter có phù hợp với người mới bắt đầu không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Vâng — nó chạy trên các thiết lập mặc định, vì vậy không có thiết lập phức tạp và việc cài đặt cũng giống như bất kỳ EA MetaTrader nào khác. Chỉ cần bắt đầu với số vốn nhỏ và chỉ sử dụng số tiền bạn có thể chấp nhận mất. Hỗ trợ có trên Telegram nếu bạn cần giúp đỡ.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="bat-dau">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi cần những gì để bắt đầu sử dụng GoldHunter EA?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Bạn cần có tài khoản MT5 với một nhà môi giới, ứng dụng MetaTrader trên máy tính để bàn (PC, laptop hoặc VPS) và giấy phép GoldHunter (Giấy phép trực tiếp hoặc Truy cập miễn phí). Sau khi có giấy phép, hãy đăng nhập vào cổng thông tin khách hàng, đăng ký số tài khoản MT của bạn và tải xuống EA và các thiết lập sẵn. Nên sử dụng VPS để chạy liên tục.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="bat-dau">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">GoldHunter EA và dịch vụ hỗ trợ của nó có sẵn bằng ngôn ngữ nào?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Cổng thông tin khách hàng, phần Hỏi đáp này và các tài liệu trợ giúp đều bằng tiếng Anh, và bộ phận hỗ trợ có mặt trên Telegram. Bản thân MetaTrader hỗ trợ nhiều ngôn ngữ hiển thị trong phần cài đặt của nó.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ===================== DANH MỤC: ĐỊNH GIÁ & CẤP PHÉP ===================== -->
+        <div class="faq-category" data-category="dinh-gia">
+            <div class="category-header">
+                <span class="cat-badge">🏷️</span>
+                <h2>Định giá & Cấp phép</h2>
+            </div>
+            <div class="faq-list-full">
+
+                <div class="faq-item-full" data-category="dinh-gia">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có thể nhận được GoldHunter EA bằng cách nào, và sự khác biệt giữa giấy phép Trực tiếp và Truy cập miễn phí là gì?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Có hai lựa chọn. <strong>Giấy phép Trực tiếp</strong> là khoản thanh toán một lần trọn đời (xem Giá cả) hoạt động với bất kỳ nhà môi giới nào, không có điều kiện về khối lượng giao dịch và bao gồm các bản nâng cấp miễn phí. <strong>Quyền truy cập Miễn phí</strong> không mất phí — đăng ký qua liên kết IB chính thức, hoàn tất KYC và nạp tiền. Cả hai đều bị khóa vào ID tài khoản MT cụ thể mà bạn đăng ký trên cổng thông tin: Giấy phép Trực tiếp cho phép bạn đăng ký tối đa giới hạn cấp độ của mình (5 tài khoản hoặc không giới hạn), trong khi Quyền truy cập Miễn phí được liên kết với tài khoản của bạn dưới IB chính thức. Cả hai đều chạy cùng một EA trên cặp XAUUSD cho MT5.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="dinh-gia">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có thể kích hoạt mã bản quyền của mình như thế nào?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Kết nối EA với biểu đồ XAUUSD, mở phần Inputs và nhập mã bản quyền của bạn. EA sẽ xác thực trực tuyến, vì vậy phần mềm giao dịch cần có kết nối internet. Tài khoản MT phải được đăng ký với giấy phép của bạn trước, nếu không bạn sẽ gặp lỗi bản quyền.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="dinh-gia">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Mã bản quyền có hết hạn không? Tôi có phải trả tiền lại sau này không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Giấy phép trực tiếp (trọn đời) không bao giờ hết hạn — không mất phí gia hạn và được nâng cấp miễn phí lên tất cả các phiên bản tương lai. Quyền truy cập miễn phí cũng không mất phí, nhưng phải tuân theo các điều kiện của chương trình IB.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="dinh-gia">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Các cấp độ tài khoản (như 5 Tài khoản và không giới hạn) có nghĩa là gì?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Mỗi giấy phép trả phí đều có một cấp độ quy định số lượng tài khoản MT bạn có thể đăng ký, ví dụ như cấp độ 5 tài khoản hoặc Không giới hạn. Mỗi mã kích hoạt được liên kết với số tài khoản đã đăng ký của bạn, vì vậy EA chỉ chạy trên các tài khoản đó. "Không giới hạn" có nghĩa là không có giới hạn về số lượng tài khoản bạn có thể đăng ký, chứ không phải là nó tự động chạy trên bất kỳ tài khoản nào.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="dinh-gia">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi đang sử dụng gói Unlimited. Vậy tôi cần đăng ký lại các tài khoản MT của mình không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Đúng vậy. Mọi gói cước, kể cả gói Unlimited, đều yêu cầu đăng ký ít nhất một tài khoản MT trên cổng thông tin trước khi EA hoạt động. Gói Unlimited chỉ loại bỏ giới hạn về số lượng tài khoản bạn có thể thêm; mỗi tài khoản vẫn phải được đăng ký, nếu không bạn sẽ gặp lỗi giấy phép.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="dinh-gia">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Cổng thông tin khách hàng hoạt động như thế nào để tôi thêm tài khoản MT khác?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Cổng thông tin khách hàng dành cho những người sở hữu giấy phép trả phí để quản lý khóa của họ — hãy đăng nhập bằng khóa và mật khẩu của bạn để đăng ký hoặc thêm ID tài khoản MT. Để chạy EA trên một tài khoản mới, trước tiên hãy thêm tài khoản đó vào cổng thông tin. Người dùng truy cập miễn phí không có cổng thông tin (bộ phận hỗ trợ sẽ thiết lập tài khoản duy nhất cho họ). Cổng thông tin chỉ dùng để quản lý khóa, không phải để tải xuống — EA có sẵn trên các liên kết tải xuống công khai.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="dinh-gia">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Điều gì xảy ra với EA truy cập miễn phí của tôi nếu tôi ngừng giao dịch hoặc chuyển tài khoản sang một IB khác?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Quyền truy cập miễn phí phụ thuộc vào việc tài khoản của bạn vẫn thuộc hệ thống IB chính thức. Nếu bạn chuyển sang hệ thống khác, giấy phép truy cập miễn phí sẽ không được duy trì và EA sẽ ngừng hoạt động. Nếu bạn không muốn điều kiện về IB hoặc khối lượng giao dịch, giấy phép trực tiếp sẽ hoạt động trên bất kỳ nhà môi giới nào. Vui lòng liên hệ bộ phận hỗ trợ nếu tình huống của bạn thay đổi.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="dinh-gia">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Nếu tôi mua giấy phép trực tiếp, tôi có thể sử dụng nó trên bất kỳ nhà môi giới nào trên bất kỳ máy tính nào không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Đúng vậy. Giấy phép trực tiếp hoạt động với bất kỳ nhà môi giới nào, không có điều kiện về khối lượng giao dịch và bạn có thể cài đặt nó trên bất kỳ máy tính hoặc VPS nào. Mỗi tài khoản MT chỉ cần được đăng ký vào giấy phép của bạn trước, tối đa đến giới hạn của cấp độ bạn chọn. EA sẽ kiểm tra giấy phép trực tuyến, vì vậy thiết bị đầu cuối cần có kết nối internet.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="dinh-gia">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Có giấy phép sử dụng mã nguồn không, và giấy phép đó bao gồm những gì?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Có. Giấy phép sử dụng toàn bộ mã nguồn có sẵn — xem phần Giá cả để biết giá hiện tại. Đây là phiên bản ngoại tuyến, không cần khóa bản quyền, bạn có thể chỉnh sửa và sử dụng trọn đời. Liên hệ bộ phận hỗ trợ để biết thêm chi tiết.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="dinh-gia">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi thanh toán phí bản quyền GoldHunter bằng cách nào?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Thanh toán bằng USDT. Chọn cấp độ của bạn trong phần Giá cả để xem số tiền chính xác cùng với địa chỉ ví USDT và mạng cần gửi đến. Sau khi thanh toán, hãy nhắn tin GoldHunter trên Telegram kèm ảnh chụp màn hình giao dịch và ID MT5 của bạn để kích hoạt giấy phép.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ===================== DANH MỤC: MÔI GIỚI & KẾ TOÁN ===================== -->
+        <div class="faq-category" data-category="moi-gioi">
+            <div class="category-header">
+                <span class="cat-badge">🏦</span>
+                <h2>Môi giới & Kế toán</h2>
+            </div>
+            <div class="faq-list-full">
+
+                <div class="faq-item-full" data-category="moi-gioi">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có thể sử dụng những sàn giao dịch nào với GoldHunter EA?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Bất kỳ sàn giao dịch MT5 nào có mã giao dịch Vàng (XAUUSD) phù hợp — với mức chênh lệch giá, đòn bẩy, tốc độ khớp lệnh và loại tài khoản tốt. Với Giấy phép Trực tiếp, bạn có thể chọn bất kỳ sàn giao dịch nào. Để truy cập miễn phí, tài khoản của bạn phải được đăng ký thông qua liên kết IB chính thức.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="moi-gioi">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi nên dùng tài khoản Cent hay tài khoản Standard?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Tài khoản Cent được khuyến nghị cho vốn nhỏ và để thử nghiệm thực tế — bạn có thể bắt đầu một cách khiêm tốn và vẫn giao dịch trong điều kiện thị trường thực. Tài khoản Standard cần vốn lớn hơn nhiều và các thiết lập thận trọng hơn. Nếu bạn là người mới, hãy bắt đầu với tài khoản Cent, sau đó chuyển sang tài khoản Standard sau. Dù bằng cách nào, hãy đảm bảo rằng nhà môi giới, đòn bẩy, chênh lệch giá, hậu tố mã chứng khoán và thiết lập tệp cấu hình phù hợp với khuyến nghị.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="moi-gioi">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi cần bao nhiêu vốn, và tài khoản Cent có an toàn hơn để thử nghiệm không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Tài khoản Cent cho phép bạn bắt đầu với số dư nhỏ hơn và rủi ro thực tế thấp hơn, vì vậy đây thường là lựa chọn để thử nghiệm ban đầu; tài khoản Standard cần nhiều vốn hơn đáng kể. Con số chính xác phụ thuộc vào loại tài khoản và khả năng chấp nhận rủi ro — xem hướng dẫn thiết lập. Vàng là mặt hàng biến động, vì vậy không có số dư nào đảm bảo chống lại thua lỗ.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="moi-gioi">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có thể sử dụng tài khoản môi giới hiện có thay vì mở tài khoản mới không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Với Giấy phép Trực tiếp, tài khoản hiện có sẽ hoạt động nếu đáp ứng các thông số kỹ thuật (mã vàng phù hợp, chênh lệch giá, đòn bẩy, loại tài khoản). Để truy cập miễn phí, bạn thường cần đăng ký tài khoản mới hoặc thay đổi nhà cung cấp dịch vụ (IB) thông qua liên kết chính thức. Nếu không chắc chắn tài khoản của mình có đủ điều kiện hay không, hãy liên hệ với bộ phận hỗ trợ trước.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="moi-gioi">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có tài khoản môi giới rồi. Làm thế nào để thay đổi hoặc đăng ký tài khoản môi giới của tôi để được truy cập miễn phí?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Để truy cập miễn phí, bạn cần có tài khoản thuộc hệ thống IB chính thức của chúng tôi. Nếu bạn chưa có tài khoản, hãy đăng ký tài khoản mới bằng liên kết môi giới GoldHunter chính thức bên dưới, liên kết này đã có sẵn mã giới thiệu phù hợp cho bạn. Nếu bạn đã có tài khoản Vantage, bạn có thể yêu cầu chuyển đổi IB sang hệ thống IB chính thức bằng cách gửi email cho Vantage — sử dụng mẫu email có sẵn trong phần "Dành cho người dùng tài khoản hiện có" trên trang chủ (hoặc hỏi trợ lý ảo và họ sẽ hướng dẫn bạn cách gửi email chính xác). Quá trình chuyển đổi IB có thể mất một thời gian để được phê duyệt, và quyền truy cập EA chỉ được kích hoạt khi tài khoản của bạn xuất hiện dưới hệ thống IB chính thức. Bộ phận hỗ trợ sẽ hướng dẫn bạn và bạn có thể tự quản lý việc đăng ký tài khoản MT trong cổng thông tin khách hàng.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="moi-gioi">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">EA có cần loại tài khoản cụ thể, đòn bẩy, hay tùy chọn không phí hoán đổi (kiểu Hồi giáo) không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Thông số tài khoản của bạn rất quan trọng: hậu tố mã giao dịch (ví dụ: XAUUSD so với XAUUSDm), chênh lệch giá, đòn bẩy, máy chủ và loại tài khoản (Cent so với Standard) đều ảnh hưởng đến hiệu suất. Đòn bẩy cao hơn cho phép biên độ ký quỹ lớn hơn nhưng không làm giảm rủi ro thị trường. Giao dịch không phí hoán đổi (Islamic) được hỗ trợ miễn là các thông số khác phù hợp. Hãy xác nhận lại thông tin chi tiết của bạn với bộ phận hỗ trợ để đảm bảo tệp thiết lập của bạn khớp với thông tin cần thiết.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="moi-gioi">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Sàn giao dịch của tôi sử dụng ký hiệu vàng có hậu tố khác, ví dụ như XAUUSDm. Liệu EA vẫn hoạt động được không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Đúng vậy. Các nhà môi giới có thể đặt tên cho mã vàng là XAUUSD hoặc sử dụng hậu tố như XAUUSDm. EA sẽ giao dịch bất kỳ mã vàng nào mà nhà môi giới của bạn cung cấp, miễn là biểu đồ và tệp thiết lập được đặt chính xác cho mã đó. Nếu giao dịch không mở, trước tiên hãy kiểm tra hậu tố của mã — bộ phận hỗ trợ có thể giúp bạn tìm được mã phù hợp.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="moi-gioi">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có thể chạy EA trên nhiều tài khoản không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Vâng, tùy thuộc vào cấp độ của bạn. Mỗi giấy phép được khóa với ID tài khoản MT cụ thể mà bạn đăng ký trên cổng thông tin: cấp độ Giấy phép Trực tiếp "5 Tài khoản" cho phép tối đa 5 ID và cấp độ "Không giới hạn" cho phép số lượng ID không giới hạn, trên bất kỳ nhà môi giới nào. Quyền truy cập miễn phí được liên kết với ID tài khoản thuộc IB chính thức. EA chỉ chạy trên các tài khoản có ID MT mà bạn đã đăng ký, vì vậy đối với nhiều tài khoản, Giấy phép Trực tiếp là lựa chọn linh hoạt hơn.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="moi-gioi">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Các nhà môi giới ở nước tôi không cung cấp tài khoản Cent. Vậy tôi có những lựa chọn nào?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Nếu không có loại tài khoản phù hợp nào được hỗ trợ bởi nhà môi giới tại quốc gia của bạn, Giấy phép Trực tiếp thường là lựa chọn tốt nhất — nó hoạt động với bất kỳ nhà môi giới nào cung cấp biểu tượng Vàng và loại tài khoản phù hợp. Quyền truy cập miễn phí phụ thuộc vào liên kết IB chính thức, điều này không khả thi ở mọi khu vực. EA cần tài khoản thực (không phải tài khoản demo) trên MT5. Liên hệ với bộ phận hỗ trợ để tìm thiết lập phù hợp nhất cho vị trí của bạn.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="moi-gioi">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có thể thử nghiệm GoldHunter EA trên tài khoản demo trước được không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Tài khoản demo rất hữu ích để thực hành cài đặt và quan sát chiến lược mà không cần mạo hiểm tiền thật. Tuy nhiên, giấy phép sử dụng tài khoản MT thực gắn liền với tài khoản đó, vì vậy tài khoản demo không phải là mục tiêu sử dụng lâu dài. Để đánh giá với rủi ro thấp, tài khoản thực có mức cược 1 cent là lựa chọn thông thường, và người dùng trả phí cũng có thể kiểm tra lại chiến lược trong MetaTrader Strategy Tester.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="moi-gioi">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi nên chọn loại tài khoản nào — Cent Standard, Cent Raw/ECN, hay loại khác?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Chúng tôi khuyên bạn nên sử dụng tài khoản Cent Standard. GoldHunter thực hiện nhiều giao dịch mỗi ngày, và trên các tài khoản Raw hoặc ECN, mỗi giao dịch đều có một khoản phí hoa hồng riêng biệt, cộng dồn rất nhanh với chiến lược lưới này. Tài khoản Cent Standard không có phí hoa hồng trên mỗi giao dịch (chi phí nằm ở chênh lệch giá), do đó tiết kiệm chi phí hơn. Tài khoản Cent khoảng 50.000 USC trở lên là điểm khởi đầu phổ biến — chỉ cần giữ mã vàng, đòn bẩy và chênh lệch giá trong phạm vi thiết lập được khuyến nghị.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ===================== DANH MỤC: VỐN & RỦI RO ===================== -->
+        <div class="faq-category" data-category="von-rui-ro">
+            <div class="category-header">
+                <span class="cat-badge">💰</span>
+                <h2>Vốn và rủi ro</h2>
+            </div>
+            <div class="faq-list-full">
+
+                <div class="faq-item-full" data-category="von-rui-ro">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi cần bao nhiêu vốn để bắt đầu sử dụng GoldHunter EA?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Với tài khoản Cent, khoảng 10.000 USC là đủ để thử nghiệm, nhưng mức này rủi ro cao — chúng tôi khuyên dùng khoảng 50.000 đến 100.000 USC hoặc hơn để có khả năng chống chịu tốt hơn, trung bình khoảng 80.000 USC. Không có một số tiền đúng duy nhất; nó phụ thuộc vào vốn chủ sở hữu, đòn bẩy, loại tài khoản, chênh lệch giá và cài đặt trước của bạn. Chỉ sử dụng vốn rủi ro mà bạn có thể chấp nhận mất.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="von-rui-ro">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Số vốn tối thiểu cần thiết cho tài khoản Cent so với tài khoản Standard là bao nhiêu?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Trên tài khoản Cent, bạn có thể thử nghiệm với số vốn nhỏ như khoảng 10.000 USC (rủi ro cao), nhưng mức vốn được khuyến nghị là từ 50.000 đến 100.000 USC trở lên. Tài khoản Cent cho phép bạn bắt đầu với số tiền thật ít rủi ro hơn, vì vậy nhiều người mới bắt đầu thường chọn mức vốn này. Tài khoản Standard cần số vốn lớn hơn đáng kể và khối lượng giao dịch tối thiểu lớn hơn. Hãy xác định quy mô vốn dựa trên khả năng chịu đựng thua lỗ của bạn, chứ không phải mục tiêu lợi nhuận.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="von-rui-ro">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Làm sao để chọn được kích thước lot phù hợp?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Hãy xác định kích thước lot dựa trên vốn, vốn chủ sở hữu, đòn bẩy, loại tài khoản, chênh lệch giá và thiết lập sẵn của bạn — đừng bao giờ dựa trên mục tiêu lợi nhuận. Vì GoldHunter xếp lớp các lệnh lưới, một lot khởi đầu quá lớn sẽ làm tăng nhanh rủi ro và có thể dẫn đến lệnh gọi ký quỹ. Hãy bắt đầu với lot mặc định trong thiết lập sẵn và chỉ tăng nó nếu vốn của bạn thực sự cho phép.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="von-rui-ro">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Liệu bất kỳ khoản vốn nào cũng đều an toàn 100%?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Không. Không có mức vốn nào là hoàn toàn an toàn — GoldHunter vẫn phải đối mặt với rủi ro thua lỗ, sụt giảm vốn, lệnh gọi ký quỹ và lệnh dừng giao dịch. Số dư lớn hơn sẽ tạo ra vùng đệm ký quỹ lớn hơn nhưng không đảm bảo an toàn hoặc lợi nhuận. Chỉ nên giao dịch với số vốn rủi ro mà bạn có thể chấp nhận mất.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="von-rui-ro">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi nên sử dụng đòn bẩy nào?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Điều này phụ thuộc vào nhà môi giới và loại tài khoản của bạn — một số cung cấp mức đòn bẩy lên đến 1:500 hoặc cao hơn. Đòn bẩy cao hơn giúp giải phóng ký quỹ để EA có thể tiếp tục hoạt động trong thời gian thua lỗ, nhưng nó không làm giảm rủi ro và có thể làm tăng mức độ rủi ro nhanh hơn. Hãy chọn mức đòn bẩy phù hợp với vốn của bạn và một thiết lập cài đặt an toàn.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="von-rui-ro">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Rủi ro lớn nhất khi sử dụng GoldHunter EA là gì?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Rủi ro chính là sự gia tăng mức rút vốn thả nổi trong giai đoạn phục hồi lưới. Nếu thị trường tiếp tục diễn biến ngược chiều với danh mục đầu tư mở, mức độ rủi ro ký quỹ sẽ tăng lên và tài khoản có thể dẫn đến lệnh gọi ký quỹ hoặc bị đóng tài khoản. Vốn đầy đủ, thiết lập giao dịch thận trọng và tạm dừng giao dịch trong thời điểm có tin tức tác động mạnh đều giúp ích.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="von-rui-ro">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Điều gì gây ra lệnh gọi ký quỹ (margin call) hoặc lệnh dừng lỗ (stop out) với EA này?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Lệnh gọi ký quỹ hoặc lệnh dừng lỗ xảy ra khi mức sụt giảm vốn tự do tăng lên cho đến khi hết vốn ký quỹ khả dụng và nhà môi giới đóng các vị thế. Với GoldHunter, rủi ro này tăng lên trong giai đoạn phục hồi lưới nếu thị trường có xu hướng mạnh ngược lại với rổ lệnh mà không có sự điều chỉnh. Hãy giữ đủ vốn cho vùng đệm ký quỹ, sử dụng thiết lập có kiểm soát và giảm rủi ro xung quanh các tin tức biến động.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="von-rui-ro">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Vốn của tôi ảnh hưởng như thế nào đến khả năng tài khoản vượt qua được mọi biến động xấu?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Khả năng sống sót phụ thuộc vào mức sụt giảm vốn tự có và ký quỹ mà vốn chủ sở hữu và ký quỹ của bạn có thể hấp thụ trước khi bị dừng lệnh. Số dư lớn hơn, được ký quỹ tốt sẽ giúp hệ thống có nhiều không gian hơn để xử lý một biến động bất lợi và đạt điểm chốt lời. Tuy nhiên, một biến động cực đoan có thể làm quá tải bất kỳ số dư nào — hãy coi tiền của bạn như vốn rủi ro và kết hợp chúng với các thiết lập thận trọng.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="von-rui-ro">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi nên quản lý vốn và rủi ro như thế nào khi có những tin tức gây chấn động lớn?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Những tin tức có tác động mạnh như NFP, CPI và FOMC có thể gây ra những biến động mạnh của giá vàng, làm tăng mức sụt giảm vốn trong giai đoạn giao dịch theo lưới. Cách tốt nhất là giảm rủi ro hoặc tắt EA trước và trong các sự kiện này, sau đó tiếp tục chạy khi thị trường ổn định. Kết hợp điều này với một thiết lập thận trọng và số vốn mà bạn có thể chấp nhận mất.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ===================== DANH MỤC: CHIẾN LƯỢC & HIỆU SUẤT ===================== -->
+        <div class="faq-category" data-category="chien-luoc">
+            <div class="category-header">
+                <span class="cat-badge">📈</span>
+                <h2>Chiến lược & Hiệu suất</h2>
+            </div>
+            <div class="faq-list-full">
+
+                <div class="faq-item-full" data-category="chien-luoc">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Chiến lược GoldHunter EA hoạt động như thế nào?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>GoldHunter giao dịch cặp XAUUSD với một lệnh chờ ghép đôi — một lệnh BuyStop và một lệnh SellStop quanh mức giá. Khi một bên được kích hoạt, nó sẽ quản lý hướng đó như một rổ lệnh, sử dụng kỹ thuật phục hồi lưới để thêm vị thế nếu thị trường di chuyển ngược lại, và đóng toàn bộ rổ lệnh ở mức chốt lời. Hãy chạy lệnh trên biểu đồ XAUUSD (Vàng); M5 là khung thời gian mặc định được khuyến nghị, nhưng khung thời gian khác không làm thay đổi kết quả.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="chien-luoc">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Liệu GoldHunter EA có đảm bảo lợi nhuận?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Không. Không có EA nào có thể đảm bảo lợi nhuận hoặc lợi nhuận không rủi ro. Bởi vì nó sử dụng phương pháp phục hồi lưới, nó vẫn tiềm ẩn rủi ro thua lỗ, sụt giảm vốn, gọi ký quỹ và dừng lệnh, đặc biệt là trong những biến động cực đoan. Chỉ nên giao dịch với số vốn rủi ro mà bạn có thể chấp nhận mất.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="chien-luoc">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có thể kiếm được bao nhiêu lợi nhuận mỗi ngày với EA?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Không có số tiền cố định và không có tỷ lệ phần trăm hàng ngày hoặc hàng tháng nào chúng tôi có thể hứa hẹn — kết quả sẽ thay đổi tùy thuộc vào điều kiện thị trường, vốn của bạn, thiết lập sẵn và cài đặt rủi ro của bạn. Bất kỳ ai hứa hẹn lợi nhuận hàng ngày được đảm bảo đều không trung thực về giao dịch. Hãy tự mình thử nghiệm trên một tài khoản nhỏ trước và đánh giá theo thời gian.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="chien-luoc">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có nên tiếp tục chạy EA trong những thời điểm có tin tức quan trọng như NFP, CPI hoặc FOMC không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Chúng tôi đặc biệt khuyên bạn nên giảm thiểu rủi ro hoặc tắt EA khi có các tin tức quan trọng về Vàng và USD. Trong thời điểm có tin tức tác động mạnh, chênh lệch giá mở rộng, độ trượt giá tăng và giá biến động nhanh, điều này có thể gây ra những khoản thua lỗ lớn hơn nhiều. Một cách tiếp cận phổ biến là tạm dừng giao dịch từ 30 đến 60 phút trước khi tin tức được công bố và tiếp tục sau khi thị trường ổn định — hãy kiểm tra lịch kinh tế trong MetaTrader để biết các sự kiện sắp tới.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="chien-luoc">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có thể xem kết quả trực tiếp hoặc chạy thử nghiệm ngược trước quyết định không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Chức năng kiểm thử ngược (backtesting) trong MetaTrader Strategy Tester được kích hoạt cho người dùng có giấy phép trả phí, cho phép bạn tự chạy các bài kiểm thử lịch sử của mình. Hãy nhớ rằng các bài kiểm thử ngược và kết quả trong quá khứ không đảm bảo hiệu suất trong tương lai — chênh lệch giá thực tế, độ trượt giá và tin tức khác với dữ liệu lịch sử. Hãy coi bất kỳ số liệu nào trong quá khứ chỉ mang tính minh họa.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="chien-luoc">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tại sao EA đôi khi lại giữ các vị thế đang thua lỗ (vừa mở) thay vì đóng chúng?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Đó là cách hoạt động của chiến lược phục hồi lưới. Khi giá di chuyển ngược lại với điểm vào lệnh đầu tiên, EA sẽ giữ lệnh và có thể thêm vị thế để giảm giá trung bình của rổ lệnh, nhằm mục đích đóng toàn bộ rổ lệnh ở mức chốt lời thay vì chấp nhận lỗ. Điều này có thể bù đắp được mức sụt giảm, nhưng đây cũng là rủi ro chính: một biến động mạnh theo một chiều có thể làm tăng khoản lỗ tiềm năng đến mức bị gọi ký quỹ, vì vậy hãy giữ đủ ký quỹ khả dụng.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="chien-luoc">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có thể rút lợi nhuận bằng cách nào và nên để EA chạy trong bao lâu?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Việc rút tiền được thực hiện thông qua nhà môi giới của bạn, không phải EA — EA chỉ thực hiện giao dịch. Sau khi rút tiền, hãy giữ đủ ký quỹ khả dụng và tránh rút số tiền lớn có thể khiến danh mục giao dịch mở bị thiếu ký quỹ. EA được thiết kế để chạy liên tục (24/5) trên máy chủ ảo VPS ổn định, ngoại trừ khi bạn tạm dừng nó xung quanh các tin tức có tác động lớn.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="chien-luoc">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">EA GoldHunter có sử dụng phương pháp Martingale không, và kích thước lot được điều chỉnh như thế nào?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>GoldHunter sử dụng chiến lược phục hồi lưới: khi thị trường di chuyển ngược lại với rổ lệnh, nó có thể thêm vị thế để cải thiện mức trung bình và đóng tất cả các lệnh ở mức chốt lời. Tùy thuộc vào thiết lập ban đầu, các lệnh lưới này có thể tăng về quy mô — tương tự như chiến lược phục hồi Martingale — đây là rủi ro chính, vì mức độ rủi ro có thể tăng nhanh trong một xu hướng mạnh. Đó là lý do tại sao vốn đầy đủ, thiết lập ban đầu thận trọng và tạm dừng giao dịch khi có tin tức là rất quan trọng; đừng bao giờ bắt đầu giao dịch với khối lượng lớn hơn số dư tài khoản của bạn.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="chien-luoc">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có thể kiểm tra lại chiến lược GoldHunter không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Đúng vậy, nhưng tính năng kiểm thử ngược (backtesting) chỉ khả dụng đối với các khóa bản quyền trả phí. Người dùng có bản quyền có thể chạy GoldHunter EA trong Trình kiểm thử chiến lược MetaTrader để đánh giá các thiết lập và hiệu suất trong quá khứ. Kiểm thử ngược không đảm bảo hiệu suất trong tương lai — chênh lệch giá thực tế, độ trượt giá và tin tức khác với dữ liệu lịch sử.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ===================== DANH MỤC: THIẾT LẬP & CÀI ĐẶT ===================== -->
+        <div class="faq-category" data-category="thiet-lap">
+            <div class="category-header">
+                <span class="cat-badge">⚙️</span>
+                <h2>Thiết lập & Cài đặt</h2>
+            </div>
+            <div class="faq-list-full">
+
+                <div class="faq-item-full" data-category="thiet-lap">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có cần VPS không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Một Virtual Private Server (VPS) được khuyến nghị mạnh mẽ cho live trading. EA cần terminal MetaTrader online 24/5 để mở, quản lý và đóng các vị thế. Nếu PC hoặc laptop của bạn tắt, ở chế độ sleep, đang khởi động lại hoặc mất internet, EA sẽ không thể hoạt động để quản lý các lệnh của bạn.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="thiet-lap">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Nếu tôi đăng ký để nhận EA, có dịch vụ cài đặt không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Dịch vụ cài đặt không được cung cấp theo mặc định. Người dùng phải tự cài đặt. Bộ phận support sẵn sàng hỗ trợ kiểm tra thông tin cơ bản hoặc xem lại error log trong tab Experts/Journal nếu bạn gặp vấn đề kỹ thuật, nhưng người dùng tuyệt đối không được chia sẻ mật khẩu tài khoản giao dịch (master password) của mình với bất kỳ ai.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="thiet-lap">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tại sao EA không vào lệnh?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Các nguyên nhân thường gặp bao gồm trạng thái license không hợp lệ/hết hạn, tên miền URL WebRequest chưa được cho phép trong cài đặt, nút Algo Trading/AutoTrading đang tắt trên terminal, phiên thị trường đã đóng, spread hiện tại vượt quá giới hạn tối đa, symbol suffix sai trên broker, cửa sổ giao dịch chưa bắt đầu, free margin không đủ, hoặc set file không khớp với thông số kỹ thuật của tài khoản.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="thiet-lap">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi cần cài đặt EA như thế nào?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Tải xuống file EA (.ex5) và tệp set (.set) từ liên kết tải xuống. Trong MetaTrader 5, vào File → Open Data Folder → MQL5 → Experts → dán file EA vào đây. Khởi động lại MT5. Sau đó kéo EA từ Navigator vào biểu đồ XAUUSD (Vàng) ở khung M5. Trong tab Inputs của EA, nhập license key của bạn và bấm OK. Nhấn nút "Algo Trading" trên thanh công cụ để bật giao dịch tự động.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="thiet-lap">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có thể chạy EA trên khung thời gian nào?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>M5 là khung thời gian mặc định được khuyến nghị. Tuy nhiên, các khung thời gian khác không làm thay đổi kết quả vì EA chỉ đọc dữ liệu giá để quản lý các lệnh của mình, không phụ thuộc vào khung thời gian bạn đang xem.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="thiet-lap">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có thể thay đổi cài đặt của EA không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Có. Khi EA được gắn vào biểu đồ, nhấn F7 hoặc chuột phải vào biểu đồ → Expert Advisors → Properties. Trong tab Inputs, bạn có thể thay đổi lot size, mục tiêu lợi nhuận, khoảng cách lưới, và nhiều thông số khác. Khuyến nghị sử dụng các thiết lập mặc định trong tệp .set mà chúng tôi cung cấp.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="thiet-lap">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có cần bật WebRequest cho EA không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Có. EA cần kết nối internet để xác thực license trực tuyến. Trong MetaTrader 5: Tools → Options → Expert Advisors → tick "Allow WebRequest for listed URL" và thêm URL license được cung cấp trong tài liệu hướng dẫn. Nếu không, EA sẽ không thể xác thực và sẽ không chạy.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="thiet-lap">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">EA có tự động mở lệnh khi tôi cài đặt không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Có, miễn là: license hợp lệ, Algo Trading đã bật, biểu đồ là XAUUSD, và phiên giao dịch đang mở. EA sẽ tự động đặt lệnh BuyStop và SellStop quanh mức giá thị trường. Nếu sau vài phút mà không thấy lệnh nào, kiểm tra lại các điều kiện trên.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="thiet-lap">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Làm cách nào để xem log hoạt động của EA?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Trong MetaTrader 5, mở tab "Experts" ở khung dưới cùng của terminal. Tại đây bạn sẽ thấy mọi hoạt động của EA: mở lệnh, đóng lệnh, thông báo license, lỗi kết nối, và các thông tin khác. Nếu có lỗi, hãy chụp ảnh log này và gửi cho bộ phận hỗ trợ qua Telegram.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="thiet-lap">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có thể dùng EA trên nhiều biểu đồ cùng lúc không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Không nên. Mỗi tài khoản MT5 chỉ nên chạy MỘT instance EA trên MỘT biểu đồ XAUUSD duy nhất. Nếu bạn chạy nhiều instance trên cùng một tài khoản, chúng sẽ xung đột và tạo ra các lệnh trùng lặp không mong muốn. Nếu bạn muốn chạy nhiều tài khoản, hãy mở nhiều terminal MT5 riêng biệt (mỗi terminal cho một tài khoản).</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="thiet-lap">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Có bản cập nhật miễn phí cho EA không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Có. Tất cả các bản cập nhật trong tương lai đều miễn phí cho người dùng có giấy phép trọn đời. Chúng tôi sẽ thông báo qua Telegram khi có phiên bản mới. Bạn chỉ cần tải file .ex5 mới và thay thế file cũ trong thư mục Experts.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ===================== DANH MỤC: VPS 24/5 ===================== -->
+        <div class="faq-category" data-category="vps">
+            <div class="category-header">
+                <span class="cat-badge">🖥️</span>
+                <h2>Máy chủ ảo VPS hoạt động 24/5</h2>
+            </div>
+            <div class="faq-list-full">
+
+                <div class="faq-item-full" data-category="vps">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">VPS là gì và tại sao tôi cần nó?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>VPS (Virtual Private Server) là một máy tính ảo chạy trên cloud, hoạt động 24/7 không bao giờ tắt. EA cần một terminal MetaTrader chạy liên tục để quản lý lệnh. Nếu bạn chạy EA trên PC cá nhân, khi bạn tắt máy hoặc mất mạng, EA sẽ ngừng hoạt động và không thể quản lý các lệnh đang mở. VPS đảm bảo EA luôn chạy 24/5.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="vps">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi nên chọn VPS ở đâu?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Chọn VPS có server gần với server của broker bạn đang dùng để giảm độ trễ (latency). Ví dụ, nếu broker đặt server ở London, hãy chọn VPS ở London. Các nhà cung cấp VPS phổ biến cho trader: ForexVPS, Beeks, MQL5 VPS (tích hợp sẵn trong MetaTrader), Contabo, Vultr. Chi phí khoảng $10-30/tháng.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="vps">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Cấu hình VPS tối thiểu là gì?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Cấu hình tối thiểu cho một terminal MT5 chạy một EA: 1 vCPU, 1GB RAM, 20GB SSD, Windows Server 2016 trở lên. Nếu bạn chạy nhiều terminal cùng lúc, cần nhiều RAM hơn (2-4GB). Không cần GPU hay cấu hình cao.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="vps">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có thể dùng MQL5 VPS tích hợp sẵn trong MetaTrader không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Có. MQL5 VPS là dịch vụ VPS tích hợp sẵn trong MetaTrader 5, chi phí khoảng $15/tháng. Ưu điểm: dễ cài đặt (chỉ cần vài click), tự động đồng bộ EA và biểu đồ từ máy tính của bạn. Nhược điểm: ít tùy chọn cấu hình hơn VPS thông thường.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="vps">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Làm sao để cài EA lên VPS?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Sau khi thuê VPS và kết nối Remote Desktop vào VPS, bạn cài MetaTrader 5 lên VPS giống như trên PC. Sau đó copy file EA (.ex5) và tệp set (.set) vào thư mục MQL5/Experts. Khởi động lại MT5, kéo EA vào biểu đồ XAUUSD, nhập license key. Sau khi EA chạy ổn định, bạn có thể tắt máy tính cá nhân mà EA vẫn tiếp tục hoạt động trên VPS.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="vps">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi có thể chạy EA trên máy tính cá nhân thay vì VPS không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Được, nhưng KHÔNG khuyến nghị. Nếu bạn chạy EA trên PC cá nhân, bạn phải đảm bảo: máy không bao giờ tắt, không sleep, không mất mạng, không cập nhật Windows tự động khởi động lại. Chỉ cần một lần mất kết nối trong lúc thị trường biến động mạnh có thể khiến EA không quản lý được lệnh và gây thua lỗ lớn. VPS là khoản đầu tư xứng đáng.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="vps">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">VPS có ảnh hưởng đến hiệu suất của EA không?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>VPS chất lượng tốt (độ trễ thấp đến server broker, uptime 99.9%) sẽ giúp EA khớp lệnh nhanh hơn và giảm slippage. VPS chất lượng kém (ping cao, hay mất kết nối) có thể gây ra lệnh chậm, slippage cao, thậm chí không khớp được lệnh. Vì vậy đừng tiếc tiền thuê VPS tốt — nó ảnh hưởng trực tiếp đến hiệu suất giao dịch.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ===================== DANH MỤC: KHẮC PHỤC SỰ CỐ ===================== -->
+        <div class="faq-category" data-category="khac-phuc">
+            <div class="category-header">
+                <span class="cat-badge">🛠️</span>
+                <h2>Khắc phục sự cố & Hỗ trợ</h2>
+            </div>
+            <div class="faq-list-full">
+
+                <div class="faq-item-full" data-category="khac-phuc">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">EA báo lỗi "License Invalid" — tôi phải làm gì?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Kiểm tra: (1) ID tài khoản MT5 đã đăng ký với license của bạn chưa? (2) License key bạn nhập có đúng không? (3) Kết nối internet có ổn định không? (4) URL WebRequest đã được thêm vào danh sách cho phép chưa? Nếu tất cả đều đúng mà vẫn lỗi, liên hệ bộ phận hỗ trợ qua Telegram kèm ảnh chụp tab Experts.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="khac-phuc">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">EA không vào lệnh dù đã cài đặt đúng — nguyên nhân là gì?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Kiểm tra lần lượt: (1) Nút "Algo Trading" trên MT5 đã bật chưa (phải hiện màu xanh)? (2) License đã hợp lệ chưa? (3) Đang gắn trên biểu đồ XAUUSD đúng chưa? (4) Phiên giao dịch Vàng đang mở chưa (Vàng đóng cửa cuối tuần)? (5) Spread hiện tại có vượt giới hạn tối đa của EA không? (6) Free margin có đủ không? (7) Symbol suffix có đúng không (XAUUSD vs XAUUSDm)? Xem log trong tab Experts để tìm lỗi cụ thể.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="khac-phuc">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">EA đóng lệnh sớm hơn mức chốt lời mong đợi?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Có thể do: (1) Broker của bạn đang có spread giãn rộng bất thường, chạm mức stop loss trước khi chạm take profit; (2) Có sự kiện tin tức lớn khiến giá biến động mạnh; (3) EA được cấu hình để đóng lệnh theo thời gian hoặc điều kiện khác trong file set. Xem log Experts để biết lý do cụ thể EA ghi lại khi đóng lệnh.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="khac-phuc">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi muốn đổi sang tài khoản MT5 khác. Phải làm gì?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Với giấy phép trả phí: đăng nhập vào Cổng thông tin khách hàng, thêm ID tài khoản MT5 mới vào danh sách (nếu còn slot). Sau đó gắn EA lên tài khoản mới và nhập license key. Với Free Access: liên hệ bộ phận hỗ trợ để được cập nhật.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="khac-phuc">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi quên license key. Làm sao lấy lại?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Đăng nhập vào Cổng thông tin khách hàng (nếu bạn có giấy phép trả phí) — license key hiển thị trong dashboard. Nếu bạn không nhớ thông tin đăng nhập, liên hệ bộ phận hỗ trợ qua Telegram kèm bằng chứng thanh toán và ID tài khoản MT5.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="khac-phuc">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">EA bị dừng đột ngột không rõ lý do?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Kiểm tra: (1) VPS/PC có bị mất kết nối internet không? (2) Terminal MT5 có bị tắt không? (3) Broker có bảo trì server không? (4) EA có bị remove khỏi biểu đồ không? (5) Nút Algo Trading có bị tắt? Xem log Experts để tìm dấu vết. Nếu EA tự remove khỏi biểu đồ, có thể do license hết hạn hoặc kết nối license server thất bại.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="khac-phuc">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi muốn được hỗ trợ trực tiếp. Liên hệ bằng cách nào?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Bộ phận hỗ trợ hoạt động chủ yếu qua Telegram. Nhấn nút "Ứng hộ" ở đầu trang FAQ này hoặc vào link Telegram chính thức. Trước khi liên hệ, hãy chuẩn bị: (1) ID tài khoản MT5, (2) Ảnh chụp tab Experts/Journal, (3) Mô tả vấn đề cụ thể. Không bao giờ chia sẻ mật khẩu master của bạn cho bất kỳ ai.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+                <div class="faq-item-full" data-category="khac-phuc">
+                    <div class="faq-question-full">
+                        <span class="faq-q-text">Tôi muốn yêu cầu hoàn tiền — chính sách là gì?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-answer-full">
+                        <p>Do đặc thù của sản phẩm số (license key không thể thu hồi sau khi cấp), chúng tôi không hỗ trợ hoàn tiền sau khi license đã được kích hoạt. Vì vậy hãy cân nhắc kỹ trước khi mua. Nếu bạn gặp vấn đề kỹ thuật không thể giải quyết, hãy liên hệ bộ phận hỗ trợ để được hỗ trợ thay vì yêu cầu hoàn tiền.</p>
+                        <button class="copy-link-btn" onclick="copyQuestionLink(this)">🔗 Sao chép liên kết</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- THÔNG BÁO KHÔNG TÌM THẤY -->
+        <div class="no-results" id="noResults" style="display: none;">
+            <p>🔍 Không tìm thấy câu hỏi nào phù hợp với "<span id="searchTerm"></span>"</p>
+            <p class="no-results-hint">Thử từ khóa khác hoặc <a href="https://t.me/+84378535155" target="_blank">liên hệ hỗ trợ</a>.</p>
+        </div>
+
+    </section>
+
+    <!-- CTA CUỐI TRANG -->
+    <section class="faq-cta">
+        <h3>Vẫn cần hỗ trợ?</h3>
+        <p>Bộ phận hỗ trợ của chúng tôi luôn sẵn sàng trên Telegram.</p>
+        <a href="https://t.me/+84378535155" target="_blank" class="btn-cta">💬 Liên Hệ Hỗ Trợ</a>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
